@@ -7,12 +7,22 @@
     <x>0</x>
     <y>0</y>
     <width>1305</width>
-    <height>543</height>
+    <height>735</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>1171</width>
+     <height>451</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
