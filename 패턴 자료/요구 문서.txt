@@ -1,0 +1,13 @@
+ 
+
+1. 요구사항 분석 및 작성 (SRS)
+
+2. SWA 문서 작성
+
+3. SWI 문서 작성
+
+4. SWT Validation
+
+5. Manual, 완료보고서
+
+6. Demo
