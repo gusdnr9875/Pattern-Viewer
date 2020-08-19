@@ -14,7 +14,7 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
  ## 해당 프로그램은 컴파일된 pat파일을 format대로 정리하여 사용자가 컴파일이전 파일과 비교할 수 있게 만들어주는 프로그램입니다. 
  
  
- ### 	Micro Pattern Program의 구성
+ ### 	
  MPAT문
 PROGRAM의 시작 부분에 기술됩니다. 
 Object File name을 지정（선택적）.
