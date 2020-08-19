@@ -15,7 +15,7 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
  
  ### 개발 환경	
  
-▶ 가상환경
+▶ 가상화 프로그램: <br>
 vmware workstation 15 player 사용
 
 ▶ OS
