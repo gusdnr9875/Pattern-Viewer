@@ -17,10 +17,23 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
-     <width>1171</width>
+     <y>70</y>
+     <width>501</width>
      <height>451</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>27</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Pattern Viewer Program</string>
    </property>
   </widget>
  </widget>

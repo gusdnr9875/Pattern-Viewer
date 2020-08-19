@@ -9,6 +9,7 @@
 #include <QDataStream>
 #include <QByteArray>
 #include <QApplication>
+#include <stdio.h>
 
 namespace Ui {
 class Widget;
@@ -21,14 +22,16 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
 
-    static QByteArray get_file_arr();
-    static void set_file_arr(QByteArray arr);
+    static QByteArray get_file_arr(); //get file data
+    static void set_file_arr(QByteArray arr); // set file data
+
 
     ~Widget();
 
 private:
     Ui::Widget *ui;
-    static QByteArray file_arr;
+    static QByteArray file_arr; //file data
+    void file_read();
 
 
 };

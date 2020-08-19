@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -23,6 +24,7 @@ class Ui_Widget
 {
 public:
     QTextEdit *textEdit;
+    QLineEdit *lineEdit;
 
     void setupUi(QWidget *Widget)
     {
@@ -31,7 +33,10 @@ public:
         Widget->resize(1305, 735);
         textEdit = new QTextEdit(Widget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(20, 20, 1171, 451));
+        textEdit->setGeometry(QRect(20, 70, 501, 451));
+        lineEdit = new QLineEdit(Widget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(30, 27, 191, 21));
 
         retranslateUi(Widget);
 
@@ -41,6 +46,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
+        lineEdit->setText(QApplication::translate("Widget", "  Pattern Viewer Program", Q_NULLPTR));
     } // retranslateUi
 
 };

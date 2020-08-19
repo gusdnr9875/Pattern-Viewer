@@ -8,12 +8,25 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    file* f = new file();
-    f->file_read();
-
+    file_read(); // file open and read
     QByteArray arr = Widget::get_file_arr();
-   // qDebug()<<arr.toHex();
-    ui->textEdit->setText(arr.toHex());
+
+    QString temp_string_arr = arr.toHex();
+    QString string_arr;
+    int cnt = 1;
+    for(int i=0;i<temp_string_arr.size();i++){
+        if(i%2==0)
+            string_arr.append(" ");
+        if(i%32==0){
+            string_arr.append("\n line "+QString::number(cnt)+":  ");
+            cnt+=1;
+        }
+        string_arr.append(temp_string_arr[i]);
+
+    }
+    //qDebug()<<aar;
+
+    ui->textEdit->setText(string_arr);
 }
 
 Widget::~Widget()
@@ -23,7 +36,11 @@ Widget::~Widget()
 
 QByteArray Widget::file_arr={};
 
-QByteArray Widget::get_file_arr(){return file_arr; }
-void Widget::set_file_arr(QByteArray arr){file_arr =arr;}
+QByteArray Widget::get_file_arr(){return file_arr; }//get file data
+void Widget::set_file_arr(QByteArray arr){file_arr =arr;}// set file data
 
 
+void Widget::file_read(){
+    file* f = new file();
+    f->file_read();
+}
