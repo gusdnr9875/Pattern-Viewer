@@ -19,7 +19,7 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
 vmware workstation 15 player 사용
 
 ▶ OS
-실행환경: <br> linux centos7 <br>  개발 환경: <br> window 10 
+실행환경 <br> linux centos7 <br>  개발 환경 <br> window 10 
 
 ▶ 개발 도구 <br>
 Qt 5, Source Insight 3
