@@ -1,9 +1,14 @@
 #ifndef WIDGET_H
 #define WIDGET_H
-
 #include <QWidget>
 #include <QString>
 #include <QDebug>
+#include <QFileDialog>
+#include <QFile>
+#include <QTextStream>
+#include <QDataStream>
+#include <QByteArray>
+#include <QApplication>
 
 namespace Ui {
 class Widget;
@@ -15,14 +20,16 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
-    QByteArray blob;
+
+    static QByteArray get_file_arr();
+    static void set_file_arr(QByteArray arr);
+
     ~Widget();
 
 private:
     Ui::Widget *ui;
+    static QByteArray file_arr;
 
-    //파일 오픈 테스트 함수
-    void test_fileopen();
 
 };
 
