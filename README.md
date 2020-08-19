@@ -22,7 +22,7 @@ vmware workstation 15 player 사용
 실행환경: <br> linux centos7 <br>  개발 환경: <br> window 10 
 
 ▶ 개발 도구 <br>
-Qt5, Source Insight 3
+Qt 5, Source Insight 3
  
 ▶ 정적 분석 도구 <br>
 CPPCHECK
