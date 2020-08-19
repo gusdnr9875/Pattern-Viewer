@@ -14,7 +14,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -23,20 +25,41 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QTextEdit *textEdit;
-    QLineEdit *lineEdit;
+    QTextEdit *textedit;
+    QLabel *label;
+    QLabel *label_2;
+    QLineEdit *keyword1;
+    QPushButton *search_button1;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
         Widget->resize(1305, 735);
-        textEdit = new QTextEdit(Widget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(20, 70, 501, 451));
-        lineEdit = new QLineEdit(Widget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(30, 27, 191, 21));
+        textedit = new QTextEdit(Widget);
+        textedit->setObjectName(QStringLiteral("textedit"));
+        textedit->setGeometry(QRect(20, 70, 501, 451));
+        label = new QLabel(Widget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 20, 231, 41));
+        label->setBaseSize(QSize(3, 4));
+        QFont font;
+        font.setFamily(QStringLiteral("Carlito"));
+        font.setBold(true);
+        font.setItalic(true);
+        font.setWeight(75);
+        label->setFont(font);
+        label_2 = new QLabel(Widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(20, 550, 61, 31));
+        label_2->setBaseSize(QSize(3, 4));
+        label_2->setFont(font);
+        keyword1 = new QLineEdit(Widget);
+        keyword1->setObjectName(QStringLiteral("keyword1"));
+        keyword1->setGeometry(QRect(90, 550, 321, 28));
+        search_button1 = new QPushButton(Widget);
+        search_button1->setObjectName(QStringLiteral("search_button1"));
+        search_button1->setGeometry(QRect(430, 550, 84, 28));
 
         retranslateUi(Widget);
 
@@ -46,7 +69,9 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        lineEdit->setText(QApplication::translate("Widget", "  Pattern Viewer Program", Q_NULLPTR));
+        label->setText(QApplication::translate("Widget", "  Pattern Viewer Program", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
+        search_button1->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
     } // retranslateUi
 
 };

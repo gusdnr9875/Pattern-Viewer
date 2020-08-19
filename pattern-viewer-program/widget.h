@@ -10,6 +10,11 @@
 #include <QByteArray>
 #include <QApplication>
 #include <stdio.h>
+#include <QTextDocument>
+#include <QMessageBox>
+#include <QTextCursor>
+#include <QTextCharFormat>
+
 
 namespace Ui {
 class Widget;
@@ -27,6 +32,9 @@ public:
 
 
     ~Widget();
+
+private slots:
+    void on_search_button1_clicked();
 
 private:
     Ui::Widget *ui;
