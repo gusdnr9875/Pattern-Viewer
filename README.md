@@ -15,19 +15,19 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
  
  ### 개발 환경	
  
-▶ 가상화 프로그램: <br>
+▶ 가상화 프로그램 <br>
 vmware workstation 15 player 사용
 
 ▶ OS
-실행환경: linux centos7,  개발 환경: window 10 
+실행환경: <br> linux centos7 <br>  개발 환경: <br> window 10 
 
-▶ 개발 도구
+▶ 개발 도구 <br>
 Qt5, Source Insight 3
  
-▶ 정적 분석 도구
+▶ 정적 분석 도구 <br>
 CPPCHECK
 
-▶ 기타 도구 
+▶ 기타 도구  <br>
 tigher-vnc, Binary-Viewer, Notepad++
 
 
