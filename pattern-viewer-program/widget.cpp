@@ -51,45 +51,10 @@ void Widget::file_read(){
 
 void Widget::on_search_button1_clicked()
 {
-    QString keyword = ui->keyword1->text();
-    QTextDocument *document = ui->textedit ->document();
+    file_search();
+}
 
-    bool found = false;
-
-    // undo previous change (if any)
-    document->undo();
-
-    if(keyword.isEmpty()){
-        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
-    }
-    else{
-        QTextCursor highlightCursor(document);
-        QTextCursor cursor(document);
-
-        cursor.beginEditBlock();
-
-        QTextCharFormat plainFormat(highlightCursor.charFormat());
-        QTextCharFormat colorFormat = plainFormat;
-
-        colorFormat.setForeground(Qt::red);
-        colorFormat.setBackground(Qt::black);
-        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
-                    highlightCursor = document->find(keyword, highlightCursor,
-                                                     QTextDocument::FindWholeWords);
-
-                if (!highlightCursor.isNull()) {
-                        found = true;
-                        highlightCursor.movePosition(QTextCursor::WordRight,
-                                                     QTextCursor::KeepAnchor);
-                        highlightCursor.mergeCharFormat(colorFormat);
-                }
-        }
-
-        cursor.endEditBlock();
-        if (found == false) {
-                   QMessageBox::information(this, tr("Word Not Found"),
-                                            tr("Sorry, the word cannot be found."));
-        }
-
-    }
+void Widget::on_nextbutton1_clicked()
+{
+    file_search_cursor();
 }

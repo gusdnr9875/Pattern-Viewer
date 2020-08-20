@@ -27,9 +27,10 @@ class Ui_Widget
 public:
     QTextEdit *textedit;
     QLabel *label;
-    QLabel *label_2;
+    QLabel *label_1;
     QLineEdit *keyword1;
     QPushButton *search_button1;
+    QPushButton *nextbutton1;
 
     void setupUi(QWidget *Widget)
     {
@@ -49,17 +50,22 @@ public:
         font.setItalic(true);
         font.setWeight(75);
         label->setFont(font);
-        label_2 = new QLabel(Widget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 550, 61, 31));
-        label_2->setBaseSize(QSize(3, 4));
-        label_2->setFont(font);
+        label_1 = new QLabel(Widget);
+        label_1->setObjectName(QStringLiteral("label_1"));
+        label_1->setGeometry(QRect(20, 550, 61, 31));
+        label_1->setBaseSize(QSize(3, 4));
+        label_1->setFont(font);
         keyword1 = new QLineEdit(Widget);
         keyword1->setObjectName(QStringLiteral("keyword1"));
+        keyword1->setEnabled(true);
         keyword1->setGeometry(QRect(90, 550, 321, 28));
         search_button1 = new QPushButton(Widget);
         search_button1->setObjectName(QStringLiteral("search_button1"));
         search_button1->setGeometry(QRect(430, 550, 84, 28));
+        nextbutton1 = new QPushButton(Widget);
+        nextbutton1->setObjectName(QStringLiteral("nextbutton1"));
+        nextbutton1->setEnabled(false);
+        nextbutton1->setGeometry(QRect(430, 590, 84, 28));
 
         retranslateUi(Widget);
 
@@ -70,8 +76,9 @@ public:
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
         label->setText(QApplication::translate("Widget", "  Pattern Viewer Program", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
+        label_1->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
         search_button1->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
+        nextbutton1->setText(QApplication::translate("Widget", "Next", Q_NULLPTR));
     } // retranslateUi
 
 };
