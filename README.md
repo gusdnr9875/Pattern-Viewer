@@ -15,10 +15,10 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
  
  ## 해당 프로그램은 컴파일된 pat파일을 format대로 정리하여 사용자가 컴파일 이전 파일과 비교할 수 있게 만들어주는 프로그램입니다. <br><br><br>
  
-<h3>1.	Introduction</h3>
+<h3> 1.	Introduction </h3>
 본 문서는 FPGA 에서 사용되는 PAT 파일 컴파일러에 대한 Pattern Viewer Program의 소프트웨어 요구사항(Software Requirement Specification)에 대하여 기술한다.
 
-<h31.1.	Purpose</h3
+<h3> 1.1.	Purpose </h3>
 Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한다. 개발 방향 결정, Software Architecture 설계, Software Function Block 문서의 기준으로 사용하기 위해 작성한다.
 본 문서의 기술은 소프트웨어 관점에서 기술한다. 사용자의 요구사항 사항을 분석하고 작성한 문서이다. 사용자 기준에서의 흐름도, UML을 반영한다. 따라서 사용자와 관련 기능을 공유하며 Software 요구사항(기능)이 충족하는지 살펴보는 것을 문서의 기준으로 한다. 결국 사용자의 요구사항 및 요구 기능을 누락 없이 설계에 반영하고 그러한 요구사항을 구현하기 위해서 필요한 부분을 기술하는 문서이다.
 <br><br>
@@ -28,6 +28,31 @@ Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한
 	comp_te_eval_op_reg_200726.PAT
 	UNI610-RegFor-List_Rev0.67_20200804.xlsx
 	UNI610-RegFor-system-control-pg_rev0.7_20200625.xlsx
+
+<br><br>
+
+![image](https://user-images.githubusercontent.com/38147253/90740975-09187f80-e30a-11ea-9ec7-3ec3d2c47a5f.png)
+
+#### 그림 1. Pattern Viewer Program System
+<br>
+
+	Pattern Viewer Program은 PAT file을 읽어들여 내용을 구성한다.
+
+	mpat file format의 내용을 기반으로 사용자에게 정보를 전달한다.
+  
+	사용자에게 exe 실행 파일 형식으로 전달한다
+
+<br>
+
+
+![use diagram](https://user-images.githubusercontent.com/38147253/90741505-2baa9880-e30a-11ea-8832-eec4b8cfa0d1.png)
+
+
+#### 그림 2. Use Case Diagram
+
+	사용자는 ASC file, micro manual을 토대로 컴파일된 pat 파일이 올바른지 검증할 수 있다.
+	pat파일을 업로드하고 문자열 검색, 바이너리 뷰, 포맷 바이너리 뷰, 포맷 양식 등을 확인한다.
+
 
 <br><br><br><br>
  ### 개발 환경	
