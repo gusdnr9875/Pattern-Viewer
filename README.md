@@ -71,9 +71,9 @@ Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한
 
 #### 그림 4. Class Diagram <br>
 
-	widget에서 gui를 생성한다. 
-	file에서는 pat파일 open과 read를 담당한다. format에서는 pat file format에 맞춰 데이터를 변경한다.
-	file과 format 클래스에서 데이터를 받아 widget에서 처리한다. 
+	widget에서 gui를 생성한다. <br>
+	file에서는 pat파일 open과 read를 담당한다. format에서는 pat file format에 맞춰 데이터를 변경한다. <br>
+	file과 format 클래스에서 데이터를 받아 widget에서 처리한다. <br>
 
 <br><br>
 <br><br><br><br>
