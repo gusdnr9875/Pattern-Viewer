@@ -1,1 +1,4 @@
 https://wiki.qt.io/QString/ko
+
+https://doc.qt.io/qt-5/qtuitools-textfinder-example.html
+
