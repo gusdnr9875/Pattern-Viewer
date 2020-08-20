@@ -55,7 +55,7 @@ Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한
 
 
 
-![flow chart](https://user-images.githubusercontent.com/38147253/90741775-3e24d200-e30a-11ea-929b-384cc0b18dfa.png)
+![image](https://user-images.githubusercontent.com/38147253/90745199-2732af80-e30b-11ea-884d-0e664f361011.png)
 <br>
 
 #### 그림 3. Flow Chart <br>
@@ -67,6 +67,15 @@ Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한
 
 <br><br>
 
+![flow chart](https://user-images.githubusercontent.com/38147253/90741775-3e24d200-e30a-11ea-929b-384cc0b18dfa.png)
+
+#### 그림 4. Class Diagram <br>
+
+	widget에서 gui를 생성한다. 
+	file에서는 pat파일 open과 read를 담당한다. format에서는 pat file format에 맞춰 데이터를 변경한다.
+	file과 format 클래스에서 데이터를 받아 widget에서 처리한다. 
+
+<br><br>
 <br><br><br><br>
  ### 개발 환경	
  
