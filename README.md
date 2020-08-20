@@ -50,9 +50,22 @@ Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한
 
 #### 그림 2. Use Case Diagram
 
-	사용자는 ASC file, micro manual을 토대로 컴파일된 pat 파일이 올바른지 검증할 수 있다.
+	사용자는 ASC file, micro manual을 토대로 컴파일된 pat 파일이 올바른지 검증할 수 있다. <br>
 	pat파일을 업로드하고 문자열 검색, 바이너리 뷰, 포맷 바이너리 뷰, 포맷 양식 등을 확인한다.
 
+
+
+![flow chart](https://user-images.githubusercontent.com/38147253/90741775-3e24d200-e30a-11ea-929b-384cc0b18dfa.png)
+<br>
+
+#### 그림 3. Flow Chart <br>
+
+	프로그램이 실행될 때 사용자는 pat파일을 등록한다. Reopen 버튼을 통해서 언제든지 pat 파일을 재 등록할 수 있다.
+	등록 후 변환된 바이너리 값들을 hex 값으로 확인할 수 있다.
+	특정 문자열을 입력하여 검색이 가능하다. 검색 후 기존 edit text에서 확인이 가능하다.
+	단축키와 파일 포맷도 확인이 가능하다. 
+
+<br><br>
 
 <br><br><br><br>
  ### 개발 환경	
