@@ -6,7 +6,7 @@ Test System에서는 ALPG(algorithmic pattern generator)에서 Test Pattern을 �
 Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합니다.
 
 
-# 개요
+
  
   
  ![1](https://user-images.githubusercontent.com/38147253/90470950-c7e06e00-e157-11ea-856f-46d155cfcebb.jpg)
