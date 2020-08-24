@@ -31,12 +31,17 @@ public:
     QLineEdit *keyword1;
     QPushButton *search_button1;
     QPushButton *nextbutton1;
+    QTextEdit *textedit2;
+    QLabel *label_2;
+    QLineEdit *keyword2;
+    QPushButton *search_button2;
+    QPushButton *nextbutton2;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(1305, 735);
+        Widget->resize(1410, 870);
         textedit = new QTextEdit(Widget);
         textedit->setObjectName(QStringLiteral("textedit"));
         textedit->setGeometry(QRect(20, 70, 501, 451));
@@ -66,6 +71,25 @@ public:
         nextbutton1->setObjectName(QStringLiteral("nextbutton1"));
         nextbutton1->setEnabled(false);
         nextbutton1->setGeometry(QRect(430, 590, 84, 28));
+        textedit2 = new QTextEdit(Widget);
+        textedit2->setObjectName(QStringLiteral("textedit2"));
+        textedit2->setGeometry(QRect(630, 70, 501, 451));
+        label_2 = new QLabel(Widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(640, 550, 61, 31));
+        label_2->setBaseSize(QSize(3, 4));
+        label_2->setFont(font);
+        keyword2 = new QLineEdit(Widget);
+        keyword2->setObjectName(QStringLiteral("keyword2"));
+        keyword2->setEnabled(true);
+        keyword2->setGeometry(QRect(710, 550, 321, 28));
+        search_button2 = new QPushButton(Widget);
+        search_button2->setObjectName(QStringLiteral("search_button2"));
+        search_button2->setGeometry(QRect(1040, 550, 84, 28));
+        nextbutton2 = new QPushButton(Widget);
+        nextbutton2->setObjectName(QStringLiteral("nextbutton2"));
+        nextbutton2->setEnabled(false);
+        nextbutton2->setGeometry(QRect(1040, 590, 84, 28));
 
         retranslateUi(Widget);
 
@@ -79,6 +103,9 @@ public:
         label_1->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
         search_button1->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
         nextbutton1->setText(QApplication::translate("Widget", "Next", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
+        search_button2->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
+        nextbutton2->setText(QApplication::translate("Widget", "Next", Q_NULLPTR));
     } // retranslateUi
 
 };

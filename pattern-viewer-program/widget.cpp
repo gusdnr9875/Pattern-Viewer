@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include "file.h"
+#include "format.h"
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -22,15 +23,17 @@ Widget::Widget(QWidget *parent) :
             cnt+=1;
         }
         string_arr.append(temp_string_arr[i]);
-
     }
-    //qDebug()<<aar;
 
-    setPalette(Qt::gray);
+    format* formatt = new format();
+    formatt->startformat();
+
+    //setPalette(Qt::gray);
 
 
-    //ui->textedit->setText(string_arr);
-    ui->textedit->setText(arr);
+    ui->textedit->setText(string_arr);
+   // ui->textedit->setText(arr.toBase64());
+    ui->textedit2->setText(string_arr);
 }
 
 Widget::~Widget()
