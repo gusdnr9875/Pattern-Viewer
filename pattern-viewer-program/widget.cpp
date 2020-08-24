@@ -25,12 +25,12 @@ Widget::Widget(QWidget *parent) :
 
     }
     //qDebug()<<aar;
-    //ui->textEdit->setTextColor(Qt::);
-   //setAutoFillBackground(true);
+
     setPalette(Qt::gray);
 
 
-    ui->textedit->setText(string_arr);
+    //ui->textedit->setText(string_arr);
+    ui->textedit->setText(arr);
 }
 
 Widget::~Widget()

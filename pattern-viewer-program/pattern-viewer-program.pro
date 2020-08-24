@@ -26,9 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         widget.cpp \
     file.cpp \
-    search.cpp
+    search.cpp \
+    format.cpp
 
 HEADERS  += widget.h \
-    file.h
+    file.h \
+    format.h
 
 FORMS    += widget.ui

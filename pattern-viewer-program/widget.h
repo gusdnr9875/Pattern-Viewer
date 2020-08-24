@@ -46,6 +46,7 @@ private slots:
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
+    //searching variables
     QString search_keyword;  // search keyword
     int cursor_position = 0; //current cursor
     int cursor_total =0; //total cursor count

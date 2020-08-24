@@ -33,6 +33,7 @@ void Widget::file_search(){
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
                     highlightCursor = document->find(keyword, highlightCursor,
                                                      QTextDocument::FindWholeWords);
+                //qDebug()<<"search";
                 cursor_cnt++;
                 if (!highlightCursor.isNull()) {
                         found = true;

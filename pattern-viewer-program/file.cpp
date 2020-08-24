@@ -37,7 +37,7 @@ void file::file_read(){
 
     Widget::set_file_arr(blob);
 
-
+    File.close(); // 파일닫기
     //qDebug() << blob.toHex();
 
     /*
