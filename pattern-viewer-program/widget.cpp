@@ -25,15 +25,24 @@ Widget::Widget(QWidget *parent) :
         string_arr.append(temp_string_arr[i]);
     }
 
-    format* formatt = new format();
-    formatt->startformat();
+    format formatt ; //= new format();
+    formatt.startformat();
 
-    //setPalette(Qt::gray);
+
 
 
     ui->textedit->setText(string_arr);
-   // ui->textedit->setText(arr.toBase64());
-    ui->textedit2->setText(string_arr);
+
+
+    ui->textedit2->setText("File Header\n");
+
+    ui->textedit2->append("Discernment Code");
+    ui->textedit2->append(formatt.read_FileHeaderDiscernmentCode().toHex());
+    ui->textedit2->append("Source File Name");
+    ui->textedit2->append(formatt.read_FileHeaderSourceFileName());
+
+    //ui->textedit2->setText(formatt.get_file_arr().toHex());
+
 }
 
 Widget::~Widget()

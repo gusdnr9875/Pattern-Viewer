@@ -10,6 +10,38 @@ void format::startformat(){
     set_file_arr(arr);
     //qDebug()<< arr.toHex();
 
-    division[0][0].push_back("File Header");division[0][1].push_back('u');division[0][2].push_back('u');
 
+ }
 
+QByteArray format::read_FileHeaderDiscernmentCode(){
+    // u       1       4
+
+     QByteArray temp;
+     for(int i=started;i<ended;i++){
+         if(i%2==0)
+            temp.append();
+         temp.append(originalfile.at(i));
+      }
+     return temp;
+}
+
+QByteArray format::read_FileHeaderSourceFileName(){
+    //   c       36      36
+    started = ended;
+    ended += 36;
+    QByteArray temp;
+    for(int i=started;i<ended;i++)
+        temp.append(originalfile.at(i));
+    return temp;
+
+}
+
+QByteArray format::read_FileHeaderCompileDate(){
+    //   c       8       8
+    started = ended;
+    ended += 8;
+    QByteArray temp;
+    for(int i=started;i<ended;i++)
+        temp.append(originalfile.at(i));
+    return temp;
+}
