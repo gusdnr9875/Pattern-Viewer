@@ -18,7 +18,7 @@ public:
 
 
     //Format Header size: 688 Byte               //  Type | size  | size(Byte)
-    QByteArray read_FileHeaderDiscernmentCode(); //   u       1       4
+    QString read_FileHeaderDiscernmentCode(); //   u       1       4
     QByteArray read_FileHeaderSourceFileName();  //   c       36      36
     QByteArray read_FileHeaderCompileDate();     //   c       8       8
 

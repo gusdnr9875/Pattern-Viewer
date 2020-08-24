@@ -37,9 +37,11 @@ Widget::Widget(QWidget *parent) :
     ui->textedit2->setText("File Header\n");
 
     ui->textedit2->append("Discernment Code");
-    ui->textedit2->append(formatt.read_FileHeaderDiscernmentCode().toHex());
+    ui->textedit2->append(formatt.read_FileHeaderDiscernmentCode());
     ui->textedit2->append("Source File Name");
     ui->textedit2->append(formatt.read_FileHeaderSourceFileName());
+    ui->textedit2->append("Compile Date");
+    ui->textedit2->append(formatt.read_FileHeaderCompileDate());
 
     //ui->textedit2->setText(formatt.get_file_arr().toHex());
 

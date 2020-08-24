@@ -13,16 +13,23 @@ void format::startformat(){
 
  }
 
-QByteArray format::read_FileHeaderDiscernmentCode(){
+QString format::read_FileHeaderDiscernmentCode(){
     // u       1       4
 
-     QByteArray temp;
+
+     QString temp2;
+     int cnt = 0;
      for(int i=started;i<ended;i++){
-         if(i%2==0)
-            temp.append();
+        if(cnt!=0)
+            temp2.append(" ");
+         if(cnt%32==0 && cnt!=0)
+             temp2.append("\n");
+         cnt++;
+         QByteArray temp;
          temp.append(originalfile.at(i));
+         temp2.append(temp.toHex());
       }
-     return temp;
+     return temp2;
 }
 
 QByteArray format::read_FileHeaderSourceFileName(){

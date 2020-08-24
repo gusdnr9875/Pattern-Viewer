@@ -36,6 +36,7 @@ public:
     QLineEdit *keyword2;
     QPushButton *search_button2;
     QPushButton *nextbutton2;
+    QLabel *label_3;
 
     void setupUi(QWidget *Widget)
     {
@@ -44,7 +45,7 @@ public:
         Widget->resize(1410, 870);
         textedit = new QTextEdit(Widget);
         textedit->setObjectName(QStringLiteral("textedit"));
-        textedit->setGeometry(QRect(20, 70, 501, 451));
+        textedit->setGeometry(QRect(20, 70, 501, 671));
         label = new QLabel(Widget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 20, 231, 41));
@@ -57,39 +58,42 @@ public:
         label->setFont(font);
         label_1 = new QLabel(Widget);
         label_1->setObjectName(QStringLiteral("label_1"));
-        label_1->setGeometry(QRect(20, 550, 61, 31));
+        label_1->setGeometry(QRect(30, 770, 61, 31));
         label_1->setBaseSize(QSize(3, 4));
         label_1->setFont(font);
         keyword1 = new QLineEdit(Widget);
         keyword1->setObjectName(QStringLiteral("keyword1"));
         keyword1->setEnabled(true);
-        keyword1->setGeometry(QRect(90, 550, 321, 28));
+        keyword1->setGeometry(QRect(100, 770, 321, 28));
         search_button1 = new QPushButton(Widget);
         search_button1->setObjectName(QStringLiteral("search_button1"));
-        search_button1->setGeometry(QRect(430, 550, 84, 28));
+        search_button1->setGeometry(QRect(440, 770, 84, 28));
         nextbutton1 = new QPushButton(Widget);
         nextbutton1->setObjectName(QStringLiteral("nextbutton1"));
         nextbutton1->setEnabled(false);
-        nextbutton1->setGeometry(QRect(430, 590, 84, 28));
+        nextbutton1->setGeometry(QRect(440, 810, 84, 28));
         textedit2 = new QTextEdit(Widget);
         textedit2->setObjectName(QStringLiteral("textedit2"));
-        textedit2->setGeometry(QRect(630, 70, 501, 451));
+        textedit2->setGeometry(QRect(630, 70, 501, 671));
         label_2 = new QLabel(Widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(640, 550, 61, 31));
+        label_2->setGeometry(QRect(650, 770, 61, 31));
         label_2->setBaseSize(QSize(3, 4));
         label_2->setFont(font);
         keyword2 = new QLineEdit(Widget);
         keyword2->setObjectName(QStringLiteral("keyword2"));
         keyword2->setEnabled(true);
-        keyword2->setGeometry(QRect(710, 550, 321, 28));
+        keyword2->setGeometry(QRect(720, 770, 321, 28));
         search_button2 = new QPushButton(Widget);
         search_button2->setObjectName(QStringLiteral("search_button2"));
-        search_button2->setGeometry(QRect(1040, 550, 84, 28));
+        search_button2->setGeometry(QRect(1050, 770, 84, 28));
         nextbutton2 = new QPushButton(Widget);
         nextbutton2->setObjectName(QStringLiteral("nextbutton2"));
         nextbutton2->setEnabled(false);
-        nextbutton2->setGeometry(QRect(1040, 590, 84, 28));
+        nextbutton2->setGeometry(QRect(1050, 810, 84, 28));
+        label_3 = new QLabel(Widget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(1160, 840, 231, 20));
 
         retranslateUi(Widget);
 
@@ -106,6 +110,7 @@ public:
         label_2->setText(QApplication::translate("Widget", "Keyword:", Q_NULLPTR));
         search_button2->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
         nextbutton2->setText(QApplication::translate("Widget", "Next", Q_NULLPTR));
+        label_3->setText(QApplication::translate("Widget", "Copyright \302\251UNITEST Corporation", Q_NULLPTR));
     } // retranslateUi
 
 };
