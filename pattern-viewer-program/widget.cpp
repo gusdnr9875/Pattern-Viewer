@@ -42,8 +42,9 @@ Widget::Widget(QWidget *parent) :
     ui->textedit2->append(formatt.read_FileHeaderSourceFileName());
     ui->textedit2->append("Compile Date");
     ui->textedit2->append(formatt.read_FileHeaderCompileDate());
+    ui->textedit2->append(string_arr);
 
-    //ui->textedit2->setText(formatt.get_file_arr().toHex());
+
 
 }
 

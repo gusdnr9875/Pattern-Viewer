@@ -14,6 +14,9 @@
 #include <QMessageBox>
 #include <QTextCursor>
 #include <QTextCharFormat>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QAction>
 
 
 namespace Ui {
@@ -42,6 +45,9 @@ private slots:
     void on_search_button1_clicked();
 
     void on_nextbutton1_clicked();
+
+
+
 
 private:
     Ui::Widget *ui;

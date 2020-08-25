@@ -14,6 +14,8 @@ void Widget::file_search(){
 
     int cursor_cnt = 0;
 
+
+
     if(keyword.isEmpty()){
         QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
         ui->nextbutton1->setEnabled(false);
@@ -89,7 +91,8 @@ void Widget::file_search_cursor(){
 
     int cnt =0;
     int cursor_point = get_cursor_position();
-    qDebug()<<get_cursor_total();
+    if(keyword.size()>0)
+        keyword.remove(keyword.size(),1);
     if(cursor_point == (get_cursor_total() - 1))
         cursor_point =0;
     while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
@@ -107,7 +110,7 @@ void Widget::file_search_cursor(){
                 highlightCursor.mergeCharFormat(backcolorFormat);
                 qDebug()<<cursor_point;
                 set_cursor_position(cursor_point + 1);
-                highlightCursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 4);
+                highlightCursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 0);
                 ui->textedit->setTextCursor(highlightCursor);
 
             }
