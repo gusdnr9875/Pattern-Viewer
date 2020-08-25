@@ -16,7 +16,7 @@ Test Pattern 발생을 제어하는 Program을 Micro Pattern Program이라 합�
  ## 해당 프로그램은 컴파일된 pat파일을 format대로 정리하여 사용자가 컴파일 이전 파일과 비교할 수 있게 만들어주는 프로그램입니다. <br><br><br>
  
 <h3> 1.	Introduction </h3>
-본 문서는 FPGA 에서 사용되는 PAT 파일 컴파일러에 대한 Pattern Viewer Program의 소프트웨어 요구사항(Software Requirement Specification)에 대하여 기술한다.
+FPGA 에서 사용되는 PAT 파일 컴파일러에 대한 Pattern Viewer Program의 소프트웨어 요구사항(Software Requirement Specification)에 대하여 기술한다.
 
 <h3> 1.1.	Purpose </h3>
 Pattern Viewer Program의 소프트웨어 요구사항을 분석하고 정의한다. 개발 방향 결정, Software Architecture 설계, Software Function Block 문서의 기준으로 사용하기 위해 작성한다.
