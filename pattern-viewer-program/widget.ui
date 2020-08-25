@@ -22,6 +22,9 @@
      <height>671</height>
     </rect>
    </property>
+   <property name="undoRedoEnabled">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -127,6 +130,9 @@
      <width>501</width>
      <height>671</height>
     </rect>
+   </property>
+   <property name="undoRedoEnabled">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">

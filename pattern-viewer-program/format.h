@@ -18,11 +18,18 @@ public:
 
 
     //Format Header size: 688 Byte               //  Type | size  | size(Byte)
-    QString read_FileHeaderDiscernmentCode(); //   u       1       4
+    QString read_FileHeaderDiscernmentCode();    //   u       1       4
     QByteArray read_FileHeaderSourceFileName();  //   c       36      36
     QByteArray read_FileHeaderCompileDate();     //   c       8       8
+    QByteArray read_FileHeaderCompileTime();     //   c       8       8
+    QByteArray read_FileHeaderCompilerVersion(); //   c       8       8
+    QString read_FileHeaderTheflagofCommon();    //   u       1       4
+    QString read_FileHeaderThecountofBlock();    //   u       1       4
+    QString read_FileHeaderTheOffsetsofCommon(); //   u       1       4
 
-
+    QString read_FileHeaderTheOffsetsofBlocks();  //   u       64      256
+    QString read_FileHeaderTheStartAddressArray();//   u       64      256
+    QString read_FileHeaderRemark();           //   c       80       80
 signals:
 
 public slots:

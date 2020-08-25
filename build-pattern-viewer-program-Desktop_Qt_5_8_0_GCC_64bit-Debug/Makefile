@@ -781,6 +781,15 @@ moc_widget.cpp: /opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
 		../pattern-viewer-program/widget.h \
 		moc_predefs.h \
 		/opt/Qt5.8.0/5.8/gcc_64/bin/moc
@@ -916,12 +925,22 @@ moc_file.cpp: ../pattern-viewer-program/widget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
 		../pattern-viewer-program/file.h \
 		moc_predefs.h \
 		/opt/Qt5.8.0/5.8/gcc_64/bin/moc
 	/opt/Qt5.8.0/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/opt/Qt5.8.0/5.8/gcc_64/mkspecs/linux-g++ -I/home/hyunwook/pattern-viwer/Pattern-Viewer/pattern-viewer-program -I/opt/Qt5.8.0/5.8/gcc_64/include -I/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets -I/opt/Qt5.8.0/5.8/gcc_64/include/QtGui -I/opt/Qt5.8.0/5.8/gcc_64/include/QtCore -I. -I/usr/include/c++/4.8.5 -I/usr/include/c++/4.8.5/x86_64-redhat-linux -I/usr/include/c++/4.8.5/backward -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/local/include -I/usr/include ../pattern-viewer-program/file.h -o moc_file.cpp
 
-moc_format.cpp: /opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
+moc_format.cpp: ../pattern-viewer-program/widget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qwidget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtguiglobal.h \
@@ -1022,6 +1041,44 @@ moc_format.cpp: /opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QString \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdir.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QTextStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDataStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QByteArray \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextDocument \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextdocument.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCursor \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVector \
 		../pattern-viewer-program/format.h \
 		moc_predefs.h \
 		/opt/Qt5.8.0/5.8/gcc_64/bin/moc
@@ -1175,7 +1232,16 @@ main.o: ../pattern-viewer-program/main.cpp ../pattern-viewer-program/widget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextformat.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../pattern-viewer-program/main.cpp
 
 widget.o: ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/widget.h \
@@ -1308,12 +1374,17 @@ widget.o: ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/widget.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
 		ui_widget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QHeaderView \
@@ -1343,7 +1414,9 @@ widget.o: ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/widget.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTextEdit \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtextedit.h \
-		../pattern-viewer-program/file.h
+		../pattern-viewer-program/file.h \
+		../pattern-viewer-program/format.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../pattern-viewer-program/widget.cpp
 
 file.o: ../pattern-viewer-program/file.cpp ../pattern-viewer-program/file.h \
@@ -1476,7 +1549,16 @@ file.o: ../pattern-viewer-program/file.cpp ../pattern-viewer-program/file.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextformat.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o file.o ../pattern-viewer-program/file.cpp
 
 search.o: ../pattern-viewer-program/search.cpp ../pattern-viewer-program/widget.h \
@@ -1609,12 +1691,17 @@ search.o: ../pattern-viewer-program/search.cpp ../pattern-viewer-program/widget.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
 		ui_widget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QHeaderView \
@@ -1647,6 +1734,7 @@ search.o: ../pattern-viewer-program/search.cpp ../pattern-viewer-program/widget.
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o search.o ../pattern-viewer-program/search.cpp
 
 format.o: ../pattern-viewer-program/format.cpp ../pattern-viewer-program/format.h \
+		../pattern-viewer-program/widget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qwidget.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1747,7 +1835,45 @@ format.o: ../pattern-viewer-program/format.cpp ../pattern-viewer-program/format.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qvector2d.h \
-		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtouchdevice.h
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QString \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdir.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QTextStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDataStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QByteArray \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextDocument \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextdocument.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCursor \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o format.o ../pattern-viewer-program/format.cpp
 
 moc_widget.o: moc_widget.cpp 

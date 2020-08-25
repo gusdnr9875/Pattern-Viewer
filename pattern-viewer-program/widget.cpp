@@ -42,6 +42,24 @@ Widget::Widget(QWidget *parent) :
     ui->textedit2->append(formatt.read_FileHeaderSourceFileName());
     ui->textedit2->append("Compile Date");
     ui->textedit2->append(formatt.read_FileHeaderCompileDate());
+    ui->textedit2->append("Compile Time");
+    ui->textedit2->append(formatt.read_FileHeaderCompileTime());
+    ui->textedit2->append("Compiler Version");
+    ui->textedit2->append(formatt.read_FileHeaderCompilerVersion());
+    ui->textedit2->append("The flag of Common");
+    ui->textedit2->append(formatt.read_FileHeaderTheflagofCommon());
+    ui->textedit2->append("The count of Block");
+    ui->textedit2->append(formatt.read_FileHeaderThecountofBlock());
+    ui->textedit2->append("The Offsets of Common");
+    ui->textedit2->append(formatt.read_FileHeaderTheOffsetsofCommon());
+
+    ui->textedit2->append("The Offsets of Blocks");
+    ui->textedit2->append(formatt.read_FileHeaderTheOffsetsofBlocks());
+    ui->textedit2->append("The Start Address Array");
+    ui->textedit2->append(formatt.read_FileHeaderTheStartAddressArray());
+    ui->textedit2->append("Remark");
+    ui->textedit2->append(formatt.read_FileHeaderRemark());
+    ui->textedit2->append("\n\n");
     ui->textedit2->append(string_arr);
 
 

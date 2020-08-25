@@ -46,6 +46,7 @@ public:
         textedit = new QTextEdit(Widget);
         textedit->setObjectName(QStringLiteral("textedit"));
         textedit->setGeometry(QRect(20, 70, 501, 671));
+        textedit->setUndoRedoEnabled(true);
         label = new QLabel(Widget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 20, 231, 41));
@@ -75,6 +76,7 @@ public:
         textedit2 = new QTextEdit(Widget);
         textedit2->setObjectName(QStringLiteral("textedit2"));
         textedit2->setGeometry(QRect(630, 70, 501, 671));
+        textedit2->setUndoRedoEnabled(true);
         label_2 = new QLabel(Widget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(650, 770, 61, 31));

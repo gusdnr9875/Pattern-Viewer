@@ -8,15 +8,17 @@ file::file(QWidget *parent) : QWidget(parent)
 file::~file() {}
 
 
-
 void file::file_read(){
 
     QString fileName = QFileDialog::getOpenFileName(this, QString::fromLocal8Bit("select file"),"","PAT (*.pat)"); //선택한 파일 경로 반환
     qDebug()<<"filename:"<<fileName;
 
-
     QString ApplicationPath = QApplication::applicationDirPath();
     QFile File(fileName);
+
+
+
+
 
 
     //파일 읽기 테스트
