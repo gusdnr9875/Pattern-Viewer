@@ -20,7 +20,6 @@ void file::file_read(){
 
 
 
-
     //파일 읽기 테스트
     if(!File.open(QIODevice::ReadOnly)) // 읽기 전용, 텍스트로 파일 열기
     {
@@ -38,20 +37,12 @@ void file::file_read(){
     QByteArray blob = File.readAll();
 
     Widget::set_file_arr(blob);
+    Widget::set_filename(fileName);
 
     File.close(); // 파일닫기
-    //qDebug() << blob.toHex();
 
-    /*
-    while(!OpenFile.atEnd())  // 파일 끝까지 읽어서
-    {
-         ConfigText=OpenFile.readLine(); // 한라인씩 읽어서 변수에 적용
-
-
-         qDebug()<< ConfigText;
-    }
-    File.close(); // 파일닫기
-    */
 
 
 }
+
+

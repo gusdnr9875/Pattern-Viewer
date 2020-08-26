@@ -186,3 +186,40 @@ QString format::read_FileHeaderThecountofBlock(){
       }
      return temp2;
  }
+  QString format::read_FileHeaderTheDataofIL(){
+      //   c       80       80
+     started = ended;
+     ended += 4;
+     QString temp2;
+     int cnt = 0;
+     for(int i=started;i<ended;i++){
+        if(cnt!=0)
+            temp2.append(" ");
+         if(cnt%32==0 && cnt!=0)
+             temp2.append("\n");
+         cnt++;
+         QByteArray temp;
+         temp.append(originalfile.at(i));
+         temp2.append(temp.toHex());
+      }
+     return temp2;
+ }
+  QString format::read_FileHeaderReserved(){
+      //   c       80       80
+     started = ended;
+     ended += 16;
+     QString temp2;
+     int cnt = 0;
+     for(int i=started;i<ended;i++){
+        if(cnt!=0)
+            temp2.append(" ");
+         if(cnt%32==0 && cnt!=0)
+             temp2.append("\n");
+         cnt++;
+         QByteArray temp;
+         temp.append(originalfile.at(i));
+         temp2.append(temp.toHex());
+      }
+     return temp2;
+ }
+

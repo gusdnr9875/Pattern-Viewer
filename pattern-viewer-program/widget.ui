@@ -217,6 +217,45 @@
     <string>Copyright ©UNITEST Corporation</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="fileSelect">
+   <property name="geometry">
+    <rect>
+     <x>1230</x>
+     <y>760</y>
+     <width>151</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>File Select</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="filename">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>840</y>
+     <width>1031</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>dfdsadasdasdasdasd</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close">
+   <property name="geometry">
+    <rect>
+     <x>1230</x>
+     <y>800</y>
+     <width>151</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

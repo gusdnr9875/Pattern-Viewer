@@ -32,6 +32,8 @@ public:
 
     static QByteArray get_file_arr(); //get file data
     static void set_file_arr(QByteArray arr); // set file data
+    static QString get_filename(); //get filename
+    static void set_filename(QString name); // set filename
 
     QString get_search_keyword(){return search_keyword;} //get search_keyword
     void set_search_keyword(QString val){search_keyword=val;} // set search_keyword
@@ -49,9 +51,13 @@ private slots:
 
 
 
+    void on_close_clicked();
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
+    static QString filename; //file name
+
     //searching variables
     QString search_keyword;  // search keyword
     int cursor_position = 0; //current cursor

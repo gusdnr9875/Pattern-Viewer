@@ -29,7 +29,10 @@ public:
 
     QString read_FileHeaderTheOffsetsofBlocks();  //   u       64      256
     QString read_FileHeaderTheStartAddressArray();//   u       64      256
-    QString read_FileHeaderRemark();           //   c       80       80
+    QString read_FileHeaderRemark();              //   c       80      80
+    QString read_FileHeaderTheDataofIL();         //   u       1       4
+    QString read_FileHeaderReserved();            //   i       4       16
+
 signals:
 
 public slots:

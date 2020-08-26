@@ -30,7 +30,7 @@ Widget::Widget(QWidget *parent) :
 
 
 
-
+    ui->filename->setText(get_filename());
     ui->textedit->setText(string_arr);
 
 
@@ -59,10 +59,20 @@ Widget::Widget(QWidget *parent) :
     ui->textedit2->append(formatt.read_FileHeaderTheStartAddressArray());
     ui->textedit2->append("Remark");
     ui->textedit2->append(formatt.read_FileHeaderRemark());
+    ui->textedit2->append("The Data of IL-MODE");
+    ui->textedit2->append(formatt.read_FileHeaderTheDataofIL());
+    ui->textedit2->append("Reserved");
+    ui->textedit2->append(formatt.read_FileHeaderReserved());
+
     ui->textedit2->append("\n\n");
     ui->textedit2->append(string_arr);
 
-
+    /*
+    QTextCursor cursor = ui->textEdit->textCursor();
+    ui->textEdit->selectAll();
+    ui->textEdit->setFontPointSize(32);
+    ui->textEdit->setTextCursor( cursor );
+    */
 
 }
 
@@ -72,13 +82,15 @@ Widget::~Widget()
 }
 
 QByteArray Widget::file_arr={};
-
+QString Widget::filename={};
 QByteArray Widget::get_file_arr(){return file_arr; }//get file data
 void Widget::set_file_arr(QByteArray arr){file_arr =arr;}// set file data
-
+QString Widget::get_filename(){return filename;}        // get filename
+void Widget::set_filename(QString name){filename = name;} // set filename
 
 void Widget::file_read(){
     file* f = new file();
+
     f->file_read();
 }
 
@@ -90,4 +102,9 @@ void Widget::on_search_button1_clicked()
 void Widget::on_nextbutton1_clicked()
 {
     file_search_cursor();
+}
+
+void Widget::on_close_clicked()
+{
+    this->close();
 }

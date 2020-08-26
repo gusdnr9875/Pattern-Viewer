@@ -37,6 +37,9 @@ public:
     QPushButton *search_button2;
     QPushButton *nextbutton2;
     QLabel *label_3;
+    QPushButton *fileSelect;
+    QLabel *filename;
+    QPushButton *close;
 
     void setupUi(QWidget *Widget)
     {
@@ -96,6 +99,15 @@ public:
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(1160, 840, 231, 20));
+        fileSelect = new QPushButton(Widget);
+        fileSelect->setObjectName(QStringLiteral("fileSelect"));
+        fileSelect->setGeometry(QRect(1230, 760, 151, 28));
+        filename = new QLabel(Widget);
+        filename->setObjectName(QStringLiteral("filename"));
+        filename->setGeometry(QRect(30, 840, 1031, 20));
+        close = new QPushButton(Widget);
+        close->setObjectName(QStringLiteral("close"));
+        close->setGeometry(QRect(1230, 800, 151, 28));
 
         retranslateUi(Widget);
 
@@ -113,6 +125,9 @@ public:
         search_button2->setText(QApplication::translate("Widget", "Find", Q_NULLPTR));
         nextbutton2->setText(QApplication::translate("Widget", "Next", Q_NULLPTR));
         label_3->setText(QApplication::translate("Widget", "Copyright \302\251UNITEST Corporation", Q_NULLPTR));
+        fileSelect->setText(QApplication::translate("Widget", "File Select", Q_NULLPTR));
+        filename->setText(QApplication::translate("Widget", "dfdsadasdasdasdasd", Q_NULLPTR));
+        close->setText(QApplication::translate("Widget", "Close", Q_NULLPTR));
     } // retranslateUi
 
 };

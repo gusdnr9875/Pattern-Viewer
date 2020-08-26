@@ -9,10 +9,15 @@ class file : public QWidget
 public:
     explicit file(QWidget *parent = 0);
     ~file();
+
     void file_read(); // open and read file data
+
 signals:
 
 public slots:
+
+private:
+
 };
 
 #endif // FILE_H
