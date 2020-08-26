@@ -53,6 +53,8 @@ private slots:
 
     void on_close_clicked();
 
+    void on_fileSelect_clicked();
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
@@ -67,7 +69,9 @@ private:
     void file_search(); // all keyword search
     void file_search_cursor();  //cursor find
 
+    void printheader_left();
 
+    int temp_number =0;
 };
 
 #endif // WIDGET_H
