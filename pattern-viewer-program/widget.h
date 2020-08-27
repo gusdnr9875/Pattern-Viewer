@@ -10,6 +10,8 @@
 #include <QByteArray>
 #include <QApplication>
 #include <stdio.h>
+#include <string>
+#include <cstring>
 #include <QTextDocument>
 #include <QMessageBox>
 #include <QTextCursor>
@@ -25,6 +27,7 @@
 #include "xlsxchart.h"
 #include "xlsxrichstring.h"
 #include "xlsxworkbook.h"
+
 using namespace QXlsx;
 
 
@@ -82,7 +85,8 @@ private:
 
     void printheader_left();
 
-    void test_func();
+    void excel_read(); // excel read and store excelformat!
+    QString excelformat[100][10];
 
 };
 

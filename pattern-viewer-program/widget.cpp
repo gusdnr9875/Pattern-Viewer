@@ -43,20 +43,21 @@ Widget::Widget(QWidget *parent) :
 
     ui->textEdit->setTextCursor( cursor );
     */
-    ui->tablewidget->setRowCount(10);
-    ui->tablewidget->setColumnCount(10);
+    ui->tablewidget->setRowCount(70);
+    ui->tablewidget->setColumnCount(3);
 
 
-    for(int i=0;i<10;i++){
-        for(int j=0;j<10;j++){
+    for(int i=0;i<70;i++){
+        for(int j=0;j<3;j++){
             QTableWidgetItem* item = ui->tablewidget->item(i,j);
             if(!item){
                 item = new QTableWidgetItem();
                 ui->tablewidget->setItem(i,j,item);
             }
             QByteArray hexDataOne;
-            hexDataOne.append("a");
-            item->setText(hexDataOne.toHex());
+            hexDataOne.append(excelformat[i][j]);
+             item->setText(hexDataOne);
+
         }
 
 
@@ -135,7 +136,7 @@ void Widget::printheader_left()
 
     ui->textedit2->append("\n\n");
    //ui->textedit2->append(string_arr);
-test_func();
+    excel_read();
 }
 
 void Widget::on_fileSelect_clicked()
@@ -172,21 +173,4 @@ void Widget::on_fileSelect_clicked()
 
 }
 
-void Widget::test_func(){
-    Document xlsxR("/home/hyunwook/pattern-viwer/Pattern-Viewer/configuration.xlsx");
-    if (xlsxR.load()) // load excel file
-        {
-            qDebug() << "load open";
-            int row = 1; int col = 1;
-            Cell* cell = xlsxR.cellAt(row, col); // get cell pointer.
-            if ( cell != NULL )
-            {
-                QVariant var = cell->readValue(); // read cell value (number(double), QDateTime, QString ...)
-                qDebug() << var; // display value. it is 'Hello Qt!'.
-            }
-        }
 
-
-
-
-}

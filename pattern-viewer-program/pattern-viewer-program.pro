@@ -38,7 +38,8 @@ SOURCES += main.cpp\
         widget.cpp \
     file.cpp \
     search.cpp \
-    format.cpp
+    format.cpp \
+    excel.cpp
 
 HEADERS  += widget.h \
     file.h \
