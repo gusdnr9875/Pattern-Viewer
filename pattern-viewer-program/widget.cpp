@@ -16,7 +16,7 @@ Widget::Widget(QWidget *parent) :
     QString string_arr;
     int cnt = 1;
     for(int i=0;i<temp_string_arr.size();i++){
-        if(i%2==0)
+        if(i%2==0 && i!=0)
             string_arr.append(" ");
         if(i%32==0){
             string_arr.append("\n line "+QString::number(cnt)+":  ");
@@ -31,6 +31,7 @@ Widget::Widget(QWidget *parent) :
 
    ui->filename->setText(get_filename());
    // ui->filename->setText( QString::number( temp_number++));
+    ui->textedit->setFontPointSize(15);
     ui->textedit->setText(string_arr);
 
     printheader_left();
@@ -39,10 +40,28 @@ Widget::Widget(QWidget *parent) :
     /*
     QTextCursor cursor = ui->textEdit->textCursor();
     ui->textEdit->selectAll();
-    ui->textEdit->setFontPointSize(32);
+
     ui->textEdit->setTextCursor( cursor );
     */
+    ui->tablewidget->setRowCount(10);
+    ui->tablewidget->setColumnCount(10);
 
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            QTableWidgetItem* item = ui->tablewidget->item(i,j);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget->setItem(i,j,item);
+            }
+            QByteArray hexDataOne;
+            hexDataOne.append("a");
+            item->setText(hexDataOne.toHex());
+        }
+
+
+
+    }
 }
 
 Widget::~Widget()
@@ -116,7 +135,7 @@ void Widget::printheader_left()
 
     ui->textedit2->append("\n\n");
    //ui->textedit2->append(string_arr);
-
+test_func();
 }
 
 void Widget::on_fileSelect_clicked()
@@ -145,10 +164,29 @@ void Widget::on_fileSelect_clicked()
 
     ui->filename->setText(get_filename());
     //ui->filename->setText( QString::number( temp_number++));
-    qDebug()<< temp_number++;
+
     ui->textedit->setText(string_arr);
 
     printheader_left();
+
+
+}
+
+void Widget::test_func(){
+    Document xlsxR("/home/hyunwook/pattern-viwer/Pattern-Viewer/configuration.xlsx");
+    if (xlsxR.load()) // load excel file
+        {
+            qDebug() << "load open";
+            int row = 1; int col = 1;
+            Cell* cell = xlsxR.cellAt(row, col); // get cell pointer.
+            if ( cell != NULL )
+            {
+                QVariant var = cell->readValue(); // read cell value (number(double), QDateTime, QString ...)
+                qDebug() << var; // display value. it is 'Hello Qt!'.
+            }
+        }
+
+
 
 
 }

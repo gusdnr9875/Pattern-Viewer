@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -40,15 +41,16 @@ public:
     QPushButton *fileSelect;
     QLabel *filename;
     QPushButton *close;
+    QTableWidget *tablewidget;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(1410, 870);
+        Widget->resize(1451, 858);
         textedit = new QTextEdit(Widget);
         textedit->setObjectName(QStringLiteral("textedit"));
-        textedit->setGeometry(QRect(20, 70, 501, 671));
+        textedit->setGeometry(QRect(20, 70, 581, 671));
         textedit->setUndoRedoEnabled(true);
         label = new QLabel(Widget);
         label->setObjectName(QStringLiteral("label"));
@@ -78,36 +80,39 @@ public:
         nextbutton1->setGeometry(QRect(440, 810, 84, 28));
         textedit2 = new QTextEdit(Widget);
         textedit2->setObjectName(QStringLiteral("textedit2"));
-        textedit2->setGeometry(QRect(630, 70, 501, 671));
+        textedit2->setGeometry(QRect(1330, 490, 141, 81));
         textedit2->setUndoRedoEnabled(true);
         label_2 = new QLabel(Widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(650, 770, 61, 31));
+        label_2->setGeometry(QRect(670, 770, 61, 31));
         label_2->setBaseSize(QSize(3, 4));
         label_2->setFont(font);
         keyword2 = new QLineEdit(Widget);
         keyword2->setObjectName(QStringLiteral("keyword2"));
         keyword2->setEnabled(true);
-        keyword2->setGeometry(QRect(720, 770, 321, 28));
+        keyword2->setGeometry(QRect(740, 770, 321, 28));
         search_button2 = new QPushButton(Widget);
         search_button2->setObjectName(QStringLiteral("search_button2"));
-        search_button2->setGeometry(QRect(1050, 770, 84, 28));
+        search_button2->setGeometry(QRect(1070, 770, 84, 28));
         nextbutton2 = new QPushButton(Widget);
         nextbutton2->setObjectName(QStringLiteral("nextbutton2"));
         nextbutton2->setEnabled(false);
-        nextbutton2->setGeometry(QRect(1050, 810, 84, 28));
+        nextbutton2->setGeometry(QRect(1070, 810, 84, 28));
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(1160, 840, 231, 20));
+        label_3->setGeometry(QRect(1210, 840, 231, 20));
         fileSelect = new QPushButton(Widget);
         fileSelect->setObjectName(QStringLiteral("fileSelect"));
-        fileSelect->setGeometry(QRect(1230, 760, 151, 28));
+        fileSelect->setGeometry(QRect(1280, 770, 151, 28));
         filename = new QLabel(Widget);
         filename->setObjectName(QStringLiteral("filename"));
-        filename->setGeometry(QRect(30, 840, 1031, 20));
+        filename->setGeometry(QRect(10, 840, 1031, 20));
         close = new QPushButton(Widget);
         close->setObjectName(QStringLiteral("close"));
-        close->setGeometry(QRect(1230, 800, 151, 28));
+        close->setGeometry(QRect(1280, 810, 151, 28));
+        tablewidget = new QTableWidget(Widget);
+        tablewidget->setObjectName(QStringLiteral("tablewidget"));
+        tablewidget->setGeometry(QRect(650, 70, 741, 671));
 
         retranslateUi(Widget);
 

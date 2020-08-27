@@ -17,6 +17,17 @@
 #include <QMenuBar>
 #include <QStatusBar>
 #include <QAction>
+#include <QTableWidgetItem>
+
+#include "xlsxdocument.h"
+#include "xlsxchartsheet.h"
+#include "xlsxcellrange.h"
+#include "xlsxchart.h"
+#include "xlsxrichstring.h"
+#include "xlsxworkbook.h"
+using namespace QXlsx;
+
+
 
 
 namespace Ui {
@@ -71,7 +82,8 @@ private:
 
     void printheader_left();
 
-    int temp_number =0;
+    void test_func();
+
 };
 
 #endif // WIDGET_H
