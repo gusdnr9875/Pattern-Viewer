@@ -122,19 +122,6 @@
     <string>Next</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textedit2">
-   <property name="geometry">
-    <rect>
-     <x>1330</x>
-     <y>490</y>
-     <width>141</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -256,15 +243,83 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tablewidget">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>70</y>
-     <width>741</width>
-     <height>671</height>
+     <x>630</x>
+     <y>20</y>
+     <width>751</width>
+     <height>731</height>
     </rect>
    </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="tabsClosable">
+    <bool>false</bool>
+   </property>
+   <property name="tabBarAutoHide">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>TOTAL</string>
+    </attribute>
+    <widget class="QTextEdit" name="textedit2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>751</width>
+       <height>701</height>
+      </rect>
+     </property>
+     <property name="undoRedoEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>FILE HEADER</string>
+    </attribute>
+    <widget class="QTableWidget" name="tablewidget">
+     <property name="geometry">
+      <rect>
+       <x>-40</x>
+       <y>10</y>
+       <width>741</width>
+       <height>691</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>COMMON HEADER</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>COMMON BODY</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>BLOCK1 HEADER</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>BLOCK1 BODY</string>
+    </attribute>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

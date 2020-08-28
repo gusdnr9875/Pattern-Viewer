@@ -26,13 +26,14 @@ void file::file_read(){
          if(!File.exists()) // 파일이 존재하지 않으면...
         {
              qDebug()<<"file is not exist";// 파일이 존재하지 않으면...여기에 동작 적용
+             return;
         }
         else
         {
             qDebug()<<"file is not open";// 파일을 열수 없거나 파일 손상 등 여러 요인작용...
         }
     }
-    QDataStream OpenFile(&File);
+   // QDataStream OpenFile(&File);
    // QString ConfigText;
     QByteArray blob = File.readAll();
 

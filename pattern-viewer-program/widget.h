@@ -27,7 +27,6 @@
 #include "xlsxchart.h"
 #include "xlsxrichstring.h"
 #include "xlsxworkbook.h"
-
 using namespace QXlsx;
 
 
@@ -62,9 +61,6 @@ private slots:
 
     void on_nextbutton1_clicked();
 
-
-
-
     void on_close_clicked();
 
     void on_fileSelect_clicked();
@@ -86,6 +82,8 @@ private:
     void printheader_left();
 
     void excel_read(); // excel read and store excelformat!
+    QString right_total();
+
     QString excelformat[100][10];
 
 };

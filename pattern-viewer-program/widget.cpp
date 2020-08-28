@@ -26,15 +26,16 @@ Widget::Widget(QWidget *parent) :
     }
 
 
+    excel_read();
 
 
-
-   ui->filename->setText(get_filename());
-   // ui->filename->setText( QString::number( temp_number++));
+    ui->filename->setText(get_filename());
     ui->textedit->setFontPointSize(15);
     ui->textedit->setText(string_arr);
 
-    printheader_left();
+
+   ui->textedit2->setText(right_total());
+   // printheader_left();
 
 
     /*
@@ -43,8 +44,11 @@ Widget::Widget(QWidget *parent) :
 
     ui->textEdit->setTextCursor( cursor );
     */
+
+
     ui->tablewidget->setRowCount(70);
     ui->tablewidget->setColumnCount(3);
+
 
 
     for(int i=0;i<70;i++){
@@ -101,6 +105,10 @@ void Widget::on_close_clicked()
 void Widget::printheader_left()
 {
 
+
+
+
+    /*
     format formatt ; //= new format();
     formatt.startformat();
 
@@ -137,6 +145,11 @@ void Widget::printheader_left()
     ui->textedit2->append("\n\n");
    //ui->textedit2->append(string_arr);
     excel_read();
+
+
+
+
+    */
 }
 
 void Widget::on_fileSelect_clicked()
@@ -164,11 +177,12 @@ void Widget::on_fileSelect_clicked()
 
 
     ui->filename->setText(get_filename());
-    //ui->filename->setText( QString::number( temp_number++));
 
     ui->textedit->setText(string_arr);
 
-    printheader_left();
+    ui->textedit2->setText(right_total());
+
+    //printheader_left();
 
 
 }

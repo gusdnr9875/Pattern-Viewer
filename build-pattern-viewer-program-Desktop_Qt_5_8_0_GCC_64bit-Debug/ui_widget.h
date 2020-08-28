@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -32,7 +33,6 @@ public:
     QLineEdit *keyword1;
     QPushButton *search_button1;
     QPushButton *nextbutton1;
-    QTextEdit *textedit2;
     QLabel *label_2;
     QLineEdit *keyword2;
     QPushButton *search_button2;
@@ -41,7 +41,15 @@ public:
     QPushButton *fileSelect;
     QLabel *filename;
     QPushButton *close;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QTextEdit *textedit2;
+    QWidget *tab_2;
     QTableWidget *tablewidget;
+    QWidget *tab_3;
+    QWidget *tab_4;
+    QWidget *tab_5;
+    QWidget *tab_6;
 
     void setupUi(QWidget *Widget)
     {
@@ -78,10 +86,6 @@ public:
         nextbutton1->setObjectName(QStringLiteral("nextbutton1"));
         nextbutton1->setEnabled(false);
         nextbutton1->setGeometry(QRect(440, 810, 84, 28));
-        textedit2 = new QTextEdit(Widget);
-        textedit2->setObjectName(QStringLiteral("textedit2"));
-        textedit2->setGeometry(QRect(1330, 490, 141, 81));
-        textedit2->setUndoRedoEnabled(true);
         label_2 = new QLabel(Widget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(670, 770, 61, 31));
@@ -110,11 +114,43 @@ public:
         close = new QPushButton(Widget);
         close->setObjectName(QStringLiteral("close"));
         close->setGeometry(QRect(1280, 810, 151, 28));
-        tablewidget = new QTableWidget(Widget);
+        tabWidget = new QTabWidget(Widget);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setGeometry(QRect(630, 20, 751, 731));
+        tabWidget->setTabPosition(QTabWidget::North);
+        tabWidget->setTabShape(QTabWidget::Rounded);
+        tabWidget->setTabsClosable(false);
+        tabWidget->setTabBarAutoHide(false);
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        textedit2 = new QTextEdit(tab);
+        textedit2->setObjectName(QStringLiteral("textedit2"));
+        textedit2->setGeometry(QRect(0, 10, 751, 701));
+        textedit2->setUndoRedoEnabled(true);
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tablewidget = new QTableWidget(tab_2);
         tablewidget->setObjectName(QStringLiteral("tablewidget"));
-        tablewidget->setGeometry(QRect(650, 70, 741, 671));
+        tablewidget->setGeometry(QRect(-40, 10, 741, 691));
+        tabWidget->addTab(tab_2, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        tabWidget->addTab(tab_3, QString());
+        tab_4 = new QWidget();
+        tab_4->setObjectName(QStringLiteral("tab_4"));
+        tabWidget->addTab(tab_4, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QStringLiteral("tab_5"));
+        tabWidget->addTab(tab_5, QString());
+        tab_6 = new QWidget();
+        tab_6->setObjectName(QStringLiteral("tab_6"));
+        tabWidget->addTab(tab_6, QString());
 
         retranslateUi(Widget);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
@@ -133,6 +169,12 @@ public:
         fileSelect->setText(QApplication::translate("Widget", "File Select", Q_NULLPTR));
         filename->setText(QApplication::translate("Widget", "dfdsadasdasdasdasd", Q_NULLPTR));
         close->setText(QApplication::translate("Widget", "Close", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Widget", "TOTAL", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Widget", "FILE HEADER", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Widget", "COMMON HEADER", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("Widget", "COMMON BODY", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("Widget", "BLOCK1 HEADER", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("Widget", "BLOCK1 BODY", Q_NULLPTR));
     } // retranslateUi
 
 };
