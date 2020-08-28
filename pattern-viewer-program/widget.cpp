@@ -91,66 +91,29 @@ void Widget::on_search_button1_clicked()
 {
     file_search();
 }
+void Widget::on_search_button2_clicked()
+{
+    file_search_right();
+}
+
 
 void Widget::on_nextbutton1_clicked()
 {
     file_search_cursor();
 }
 
+void Widget::on_nextbutton2_clicked()
+{
+    file_search_cursor_right();
+}
+
+
 void Widget::on_close_clicked()
 {
     this->close();
 }
 
-void Widget::printheader_left()
-{
 
-
-
-
-    /*
-    format formatt ; //= new format();
-    formatt.startformat();
-
-    ui->textedit2->setText("File Header\n");
-
-    ui->textedit2->append("Discernment Code");
-    ui->textedit2->append(formatt.read_FileHeaderDiscernmentCode());
-    ui->textedit2->append("Source File Name");
-    ui->textedit2->append(formatt.read_FileHeaderSourceFileName());
-    ui->textedit2->append("Compile Date");
-    ui->textedit2->append(formatt.read_FileHeaderCompileDate());
-    ui->textedit2->append("Compile Time");
-    ui->textedit2->append(formatt.read_FileHeaderCompileTime());
-    ui->textedit2->append("Compiler Version");
-    ui->textedit2->append(formatt.read_FileHeaderCompilerVersion());
-    ui->textedit2->append("The flag of Common");
-    ui->textedit2->append(formatt.read_FileHeaderTheflagofCommon());
-    ui->textedit2->append("The count of Block");
-    ui->textedit2->append(formatt.read_FileHeaderThecountofBlock());
-    ui->textedit2->append("The Offsets of Common");
-    ui->textedit2->append(formatt.read_FileHeaderTheOffsetsofCommon());
-
-    ui->textedit2->append("The Offsets of Blocks");
-    ui->textedit2->append(formatt.read_FileHeaderTheOffsetsofBlocks());
-    ui->textedit2->append("The Start Address Array");
-    ui->textedit2->append(formatt.read_FileHeaderTheStartAddressArray());
-    ui->textedit2->append("Remark");
-    ui->textedit2->append(formatt.read_FileHeaderRemark());
-    ui->textedit2->append("The Data of IL-MODE");
-    ui->textedit2->append(formatt.read_FileHeaderTheDataofIL());
-    ui->textedit2->append("Reserved");
-    ui->textedit2->append(formatt.read_FileHeaderReserved());
-
-    ui->textedit2->append("\n\n");
-   //ui->textedit2->append(string_arr);
-    excel_read();
-
-
-
-
-    */
-}
 
 void Widget::on_fileSelect_clicked()
 {
@@ -175,10 +138,12 @@ void Widget::on_fileSelect_clicked()
 
 
 
+    ui->textedit->setTextColor(Qt::black);
 
     ui->filename->setText(get_filename());
 
     ui->textedit->setText(string_arr);
+
 
     ui->textedit2->setText(right_total());
 
@@ -186,5 +151,7 @@ void Widget::on_fileSelect_clicked()
 
 
 }
+
+
 
 
