@@ -259,7 +259,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="tabsClosable">
     <bool>false</bool>
@@ -292,11 +292,14 @@
     <widget class="QTableWidget" name="tablewidget">
      <property name="geometry">
       <rect>
-       <x>-40</x>
+       <x>10</x>
        <y>10</y>
-       <width>741</width>
+       <width>691</width>
        <height>691</height>
       </rect>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -304,6 +307,16 @@
     <attribute name="title">
      <string>COMMON HEADER</string>
     </attribute>
+    <widget class="QTableWidget" name="tablewidget2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>721</width>
+       <height>671</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">

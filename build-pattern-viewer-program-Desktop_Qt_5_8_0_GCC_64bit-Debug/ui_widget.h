@@ -47,6 +47,7 @@ public:
     QWidget *tab_2;
     QTableWidget *tablewidget;
     QWidget *tab_3;
+    QTableWidget *tablewidget2;
     QWidget *tab_4;
     QWidget *tab_5;
     QWidget *tab_6;
@@ -132,10 +133,14 @@ public:
         tab_2->setObjectName(QStringLiteral("tab_2"));
         tablewidget = new QTableWidget(tab_2);
         tablewidget->setObjectName(QStringLiteral("tablewidget"));
-        tablewidget->setGeometry(QRect(-40, 10, 741, 691));
+        tablewidget->setGeometry(QRect(10, 10, 691, 691));
+        tablewidget->setSortingEnabled(true);
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
+        tablewidget2 = new QTableWidget(tab_3);
+        tablewidget2->setObjectName(QStringLiteral("tablewidget2"));
+        tablewidget2->setGeometry(QRect(10, 10, 721, 671));
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
@@ -149,7 +154,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Widget);

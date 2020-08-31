@@ -102,6 +102,10 @@ private:
 
     QString excelformat[100][10];
 
+
+    //format division view
+    void division_FileHeader();
+
 };
 
 #endif // WIDGET_H

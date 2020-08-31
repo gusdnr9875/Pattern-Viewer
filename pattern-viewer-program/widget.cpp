@@ -38,35 +38,12 @@ Widget::Widget(QWidget *parent) :
    // printheader_left();
 
 
-    /*
-    QTextCursor cursor = ui->textEdit->textCursor();
-    ui->textEdit->selectAll();
-
-    ui->textEdit->setTextCursor( cursor );
-    */
-
-
-    ui->tablewidget->setRowCount(70);
-    ui->tablewidget->setColumnCount(3);
 
 
 
-    for(int i=0;i<70;i++){
-        for(int j=0;j<3;j++){
-            QTableWidgetItem* item = ui->tablewidget->item(i,j);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget->setItem(i,j,item);
-            }
-            QByteArray hexDataOne;
-            hexDataOne.append(excelformat[i][j]);
-             item->setText(hexDataOne);
-
-        }
 
 
-
-    }
+   division_FileHeader();
 }
 
 Widget::~Widget()
@@ -137,14 +114,13 @@ void Widget::on_fileSelect_clicked()
 
 
 
-
     ui->textedit->setTextColor(Qt::black);
-
+    ui->textedit2->setTextColor(Qt::black);
+    ui->textedit->setTextBackgroundColor(Qt::white);
+    ui->textedit2->setTextBackgroundColor(Qt::white);
     ui->filename->setText(get_filename());
 
     ui->textedit->setText(string_arr);
-
-
     ui->textedit2->setText(right_total());
 
     //printheader_left();

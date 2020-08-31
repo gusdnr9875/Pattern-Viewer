@@ -195,11 +195,12 @@ QString Widget::right_total(){
         }
 
     }
+    /*
     qDebug()<<common_r;
     qDebug()<<common_s;
     qDebug()<<block_r;
     qDebug()<<block_s;
-
+    */
     //qDebug()<< afterdata;
 
 

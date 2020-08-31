@@ -33,6 +33,8 @@ public:
     QString read_FileHeaderTheDataofIL();         //   u       1       4
     QString read_FileHeaderReserved();            //   i       4       16
 
+
+
 signals:
 
 public slots:

@@ -86,7 +86,8 @@ SOURCES       = ../pattern-viewer-program/source/xlsxabstractooxmlfile.cpp \
 		../pattern-viewer-program/file.cpp \
 		../pattern-viewer-program/search.cpp \
 		../pattern-viewer-program/format.cpp \
-		../pattern-viewer-program/excel.cpp moc_xlsxdocument.cpp \
+		../pattern-viewer-program/excel.cpp \
+		../pattern-viewer-program/division.cpp moc_xlsxdocument.cpp \
 		moc_widget.cpp \
 		moc_file.cpp \
 		moc_format.cpp
@@ -129,6 +130,7 @@ OBJECTS       = xlsxabstractooxmlfile.o \
 		search.o \
 		format.o \
 		excel.o \
+		division.o \
 		moc_xlsxdocument.o \
 		moc_widget.o \
 		moc_file.o \
@@ -391,7 +393,8 @@ DIST          = /opt/Qt5.8.0/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		../pattern-viewer-program/file.cpp \
 		../pattern-viewer-program/search.cpp \
 		../pattern-viewer-program/format.cpp \
-		../pattern-viewer-program/excel.cpp
+		../pattern-viewer-program/excel.cpp \
+		../pattern-viewer-program/division.cpp
 QMAKE_TARGET  = pattern-viewer-program
 DESTDIR       = 
 TARGET        = pattern-viewer-program
@@ -770,7 +773,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.8.0/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../pattern-viewer-program/header/xlsxabstractooxmlfile.h ../pattern-viewer-program/header/xlsxabstractooxmlfile_p.h ../pattern-viewer-program/header/xlsxabstractsheet.h ../pattern-viewer-program/header/xlsxabstractsheet_p.h ../pattern-viewer-program/header/xlsxcell.h ../pattern-viewer-program/header/xlsxcellformula.h ../pattern-viewer-program/header/xlsxcellformula_p.h ../pattern-viewer-program/header/xlsxcellrange.h ../pattern-viewer-program/header/xlsxcellreference.h ../pattern-viewer-program/header/xlsxcell_p.h ../pattern-viewer-program/header/xlsxchart.h ../pattern-viewer-program/header/xlsxchartsheet.h ../pattern-viewer-program/header/xlsxchartsheet_p.h ../pattern-viewer-program/header/xlsxchart_p.h ../pattern-viewer-program/header/xlsxcolor_p.h ../pattern-viewer-program/header/xlsxconditionalformatting.h ../pattern-viewer-program/header/xlsxconditionalformatting_p.h ../pattern-viewer-program/header/xlsxcontenttypes_p.h ../pattern-viewer-program/header/xlsxdatavalidation.h ../pattern-viewer-program/header/xlsxdatavalidation_p.h ../pattern-viewer-program/header/xlsxdocpropsapp_p.h ../pattern-viewer-program/header/xlsxdocpropscore_p.h ../pattern-viewer-program/header/xlsxdocument.h ../pattern-viewer-program/header/xlsxdocument_p.h ../pattern-viewer-program/header/xlsxdrawinganchor_p.h ../pattern-viewer-program/header/xlsxdrawing_p.h ../pattern-viewer-program/header/xlsxformat.h ../pattern-viewer-program/header/xlsxformat_p.h ../pattern-viewer-program/header/xlsxglobal.h ../pattern-viewer-program/header/xlsxmediafile_p.h ../pattern-viewer-program/header/xlsxnumformatparser_p.h ../pattern-viewer-program/header/xlsxrelationships_p.h ../pattern-viewer-program/header/xlsxrichstring.h ../pattern-viewer-program/header/xlsxrichstring_p.h ../pattern-viewer-program/header/xlsxsharedstrings_p.h ../pattern-viewer-program/header/xlsxsimpleooxmlfile_p.h ../pattern-viewer-program/header/xlsxstyles_p.h ../pattern-viewer-program/header/xlsxtheme_p.h ../pattern-viewer-program/header/xlsxutility_p.h ../pattern-viewer-program/header/xlsxworkbook.h ../pattern-viewer-program/header/xlsxworkbook_p.h ../pattern-viewer-program/header/xlsxworksheet.h ../pattern-viewer-program/header/xlsxworksheet_p.h ../pattern-viewer-program/header/xlsxzipreader_p.h ../pattern-viewer-program/header/xlsxzipwriter_p.h ../pattern-viewer-program/header/xlsxcelllocation.h ../pattern-viewer-program/header/xlsxdatetype.h ../pattern-viewer-program/widget.h ../pattern-viewer-program/file.h ../pattern-viewer-program/format.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../pattern-viewer-program/source/xlsxabstractooxmlfile.cpp ../pattern-viewer-program/source/xlsxabstractsheet.cpp ../pattern-viewer-program/source/xlsxcell.cpp ../pattern-viewer-program/source/xlsxcellformula.cpp ../pattern-viewer-program/source/xlsxcellrange.cpp ../pattern-viewer-program/source/xlsxcellreference.cpp ../pattern-viewer-program/source/xlsxchart.cpp ../pattern-viewer-program/source/xlsxchartsheet.cpp ../pattern-viewer-program/source/xlsxcolor.cpp ../pattern-viewer-program/source/xlsxconditionalformatting.cpp ../pattern-viewer-program/source/xlsxcontenttypes.cpp ../pattern-viewer-program/source/xlsxdatavalidation.cpp ../pattern-viewer-program/source/xlsxdocpropsapp.cpp ../pattern-viewer-program/source/xlsxdocpropscore.cpp ../pattern-viewer-program/source/xlsxdocument.cpp ../pattern-viewer-program/source/xlsxdrawing.cpp ../pattern-viewer-program/source/xlsxdrawinganchor.cpp ../pattern-viewer-program/source/xlsxformat.cpp ../pattern-viewer-program/source/xlsxmediafile.cpp ../pattern-viewer-program/source/xlsxnumformatparser.cpp ../pattern-viewer-program/source/xlsxrelationships.cpp ../pattern-viewer-program/source/xlsxrichstring.cpp ../pattern-viewer-program/source/xlsxsharedstrings.cpp ../pattern-viewer-program/source/xlsxsimpleooxmlfile.cpp ../pattern-viewer-program/source/xlsxstyles.cpp ../pattern-viewer-program/source/xlsxtheme.cpp ../pattern-viewer-program/source/xlsxutility.cpp ../pattern-viewer-program/source/xlsxworkbook.cpp ../pattern-viewer-program/source/xlsxworksheet.cpp ../pattern-viewer-program/source/xlsxzipreader.cpp ../pattern-viewer-program/source/xlsxzipwriter.cpp ../pattern-viewer-program/source/xlsxcelllocation.cpp ../pattern-viewer-program/source/xlsxdatetype.cpp ../pattern-viewer-program/main.cpp ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/file.cpp ../pattern-viewer-program/search.cpp ../pattern-viewer-program/format.cpp ../pattern-viewer-program/excel.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../pattern-viewer-program/source/xlsxabstractooxmlfile.cpp ../pattern-viewer-program/source/xlsxabstractsheet.cpp ../pattern-viewer-program/source/xlsxcell.cpp ../pattern-viewer-program/source/xlsxcellformula.cpp ../pattern-viewer-program/source/xlsxcellrange.cpp ../pattern-viewer-program/source/xlsxcellreference.cpp ../pattern-viewer-program/source/xlsxchart.cpp ../pattern-viewer-program/source/xlsxchartsheet.cpp ../pattern-viewer-program/source/xlsxcolor.cpp ../pattern-viewer-program/source/xlsxconditionalformatting.cpp ../pattern-viewer-program/source/xlsxcontenttypes.cpp ../pattern-viewer-program/source/xlsxdatavalidation.cpp ../pattern-viewer-program/source/xlsxdocpropsapp.cpp ../pattern-viewer-program/source/xlsxdocpropscore.cpp ../pattern-viewer-program/source/xlsxdocument.cpp ../pattern-viewer-program/source/xlsxdrawing.cpp ../pattern-viewer-program/source/xlsxdrawinganchor.cpp ../pattern-viewer-program/source/xlsxformat.cpp ../pattern-viewer-program/source/xlsxmediafile.cpp ../pattern-viewer-program/source/xlsxnumformatparser.cpp ../pattern-viewer-program/source/xlsxrelationships.cpp ../pattern-viewer-program/source/xlsxrichstring.cpp ../pattern-viewer-program/source/xlsxsharedstrings.cpp ../pattern-viewer-program/source/xlsxsimpleooxmlfile.cpp ../pattern-viewer-program/source/xlsxstyles.cpp ../pattern-viewer-program/source/xlsxtheme.cpp ../pattern-viewer-program/source/xlsxutility.cpp ../pattern-viewer-program/source/xlsxworkbook.cpp ../pattern-viewer-program/source/xlsxworksheet.cpp ../pattern-viewer-program/source/xlsxzipreader.cpp ../pattern-viewer-program/source/xlsxzipwriter.cpp ../pattern-viewer-program/source/xlsxcelllocation.cpp ../pattern-viewer-program/source/xlsxdatetype.cpp ../pattern-viewer-program/main.cpp ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/file.cpp ../pattern-viewer-program/search.cpp ../pattern-viewer-program/format.cpp ../pattern-viewer-program/excel.cpp ../pattern-viewer-program/division.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../pattern-viewer-program/widget.ui $(DISTDIR)/
 
 
@@ -5505,6 +5508,7 @@ widget.o: ../pattern-viewer-program/widget.cpp ../pattern-viewer-program/widget.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTableWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTextEdit \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtextedit.h \
@@ -5919,6 +5923,7 @@ search.o: ../pattern-viewer-program/search.cpp ../pattern-viewer-program/widget.
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTableWidget \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTextEdit \
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtextedit.h
@@ -6320,6 +6325,204 @@ excel.o: ../pattern-viewer-program/excel.cpp ../pattern-viewer-program/widget.h 
 		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QSharedDataPointer \
 		../pattern-viewer-program/header/xlsxworkbook.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o excel.o ../pattern-viewer-program/excel.cpp
+
+division.o: ../pattern-viewer-program/division.cpp ../pattern-viewer-program/widget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QWidget \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qline.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qimage.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qfont.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qcursor.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QString \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdir.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QTextStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDataStream \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QByteArray \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextDocument \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextdocument.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCursor \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QTextCharFormat \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/QTableWidgetItem \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtablewidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		../pattern-viewer-program/header/xlsxdocument.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QtGlobal \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QObject \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QImage \
+		../pattern-viewer-program/header/xlsxglobal.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QStringList \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QSharedPointer \
+		../pattern-viewer-program/header/xlsxformat.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QFont \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QColor \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtGui/QList \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
+		../pattern-viewer-program/header/xlsxworksheet.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QMap \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QPointF \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QUrl \
+		../pattern-viewer-program/header/xlsxabstractsheet.h \
+		../pattern-viewer-program/header/xlsxabstractooxmlfile.h \
+		../pattern-viewer-program/header/xlsxcell.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QDate \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QTime \
+		../pattern-viewer-program/header/xlsxcellrange.h \
+		../pattern-viewer-program/header/xlsxcellreference.h \
+		../pattern-viewer-program/header/xlsxcelllocation.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QVector \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QMetaType \
+		../pattern-viewer-program/header/xlsxchartsheet.h \
+		../pattern-viewer-program/header/xlsxchart.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QXmlStreamReader \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QXmlStreamWriter \
+		../pattern-viewer-program/header/xlsxrichstring.h \
+		/opt/Qt5.8.0/5.8/gcc_64/include/QtCore/QSharedDataPointer \
+		../pattern-viewer-program/header/xlsxworkbook.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o division.o ../pattern-viewer-program/division.cpp
 
 moc_xlsxdocument.o: moc_xlsxdocument.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_xlsxdocument.o moc_xlsxdocument.cpp
