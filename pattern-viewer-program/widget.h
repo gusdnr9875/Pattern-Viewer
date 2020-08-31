@@ -105,6 +105,9 @@ private:
 
     //format division view
     void division_FileHeader();
+    void division_CommonHeader();
+    void division_CommonBody();
+
 
 };
 
