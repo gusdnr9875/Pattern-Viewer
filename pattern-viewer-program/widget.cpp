@@ -46,6 +46,8 @@ Widget::Widget(QWidget *parent) :
    division_FileHeader();
    division_CommonHeader();
    division_CommonBody();
+   division_blockHeader();
+   //division_blockBody();
 }
 
 Widget::~Widget()

@@ -88,7 +88,8 @@ private:
     int cursor_position_right =0;
     int cursor_total =0; //total cursor count
     int cursor_total_right =0;
-
+    int commonbody_r;
+    int commonbody_s;
     void file_read(); // file open and read
     void file_search(); // all keyword search
     void file_search_cursor();  //cursor find
@@ -107,6 +108,8 @@ private:
     void division_FileHeader();
     void division_CommonHeader();
     void division_CommonBody();
+    void division_blockHeader();
+    void division_blockBody();
 
 
 };
