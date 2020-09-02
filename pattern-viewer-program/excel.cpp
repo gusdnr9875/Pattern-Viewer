@@ -12,7 +12,7 @@ void Widget::excel_read(){
             //Division Item Type Size Size(Byte) (2,0) ~ (32,4)
 
 
-            for(int i=1;i<=32;i++){
+            for(int i=1;i<=33;i++){
                 // Division
                 int row = i; int col = 1;
                 Cell* cell = xlsxR.cellAt(row, col); // get cell pointer.
@@ -34,8 +34,6 @@ void Widget::excel_read(){
                     excelformat[i][col - 1] = var.toString();
                    // qDebug()<<excelformat[i][1];
                 }
-
-
 
                 // Type
                 col = 3;
@@ -69,20 +67,14 @@ void Widget::excel_read(){
                     QVariant var = cell->readValue(); // read cell value (number(double), QDateTime, QString ...)
                     //qDebug() << var; // display value. it is 'Hello Qt!'.
                     excelformat[i][col - 1] = var.toString();
-                   // qDebug()<<excelformat[i][1];
+                   //qDebug()<<excelformat[i][4];
                 }
 
 
            }
      }
 
-    /*
-    for(int i=1;i<=32;i++){
-        for(int j=0;j< 5;j++){
-             qDebug()<<excelformat[i][j];
-        }
-    }
-*/
+
 
 }
 
@@ -95,13 +87,19 @@ QString Widget::right_total(){
 
    int common_r,common_s,block_r,block_s;
 
-    for(int i=2;i<=32;i++){
+    for(int i=2;i<=33;i++){
 
-        if(i==2)
+        if(i==32){
+            started = ended;
+            ended = 75724;
+        }
+        else if(i==2)
             ended = excelformat[i][4].toInt();
         else{
             started = ended;
             ended += excelformat[i][4].toInt();
+
+
         }
        // qDebug()<< afterdata;
 
@@ -127,7 +125,6 @@ QString Widget::right_total(){
                 afterdata.append(filedata.at(j));
         }
         afterdata.append("\n");
-
 
 
 
@@ -177,19 +174,19 @@ QString Widget::right_total(){
         }
 
         //2.
-        if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (common_r - 1) > 0){
+        if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (common_r  -1)  > 0){
             common_r--;
             i-=2;
         }
-        else if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(64bit) DATA"&& (common_s - 1) > 0){
+        else if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(64bit) DATA"&& (common_s -1)   > 0){
             common_s--;
             i-=2;
         }
-        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (block_r - 1) > 0){
+        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (block_r -1)   > 0){
             block_r--;
             i-=2;
         }
-        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (block_s - 1) > 0){
+        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (block_s -1)  > 0){
             block_s--;
             i-=2;
         }
@@ -202,6 +199,8 @@ QString Widget::right_total(){
     qDebug()<<block_s;
     */
     //qDebug()<< afterdata;
+
+
 
 
     return afterdata;
