@@ -33,22 +33,22 @@ void Widget::file_search(){
         //colorFormat.setBackground(Qt::black);
 
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
-                    highlightCursor = document->find(keyword, highlightCursor,
-                                                     QTextDocument::FindWholeWords);
-                //qDebug()<<"search";
-                cursor_cnt++;
-                if (!highlightCursor.isNull()) {
-                        found = true;
-                        highlightCursor.movePosition(QTextCursor::WordRight,
-                                                     QTextCursor::KeepAnchor);
-                        highlightCursor.mergeCharFormat(colorFormat);
-                }
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+            //qDebug()<<"search";
+            cursor_cnt++;
+            if (!highlightCursor.isNull()) {
+                found = true;
+                highlightCursor.movePosition(QTextCursor::WordRight,
+                                             QTextCursor::KeepAnchor);
+                highlightCursor.mergeCharFormat(colorFormat);
+            }
         }
 
         cursor.endEditBlock();
         if (found == false) {
-                   QMessageBox::information(this, tr("Word Not Found"),
-                                            tr("Sorry, the word cannot be found."));
+            QMessageBox::information(this, tr("Word Not Found"),
+                                     tr("Sorry, the word cannot be found."));
         }
 
 
@@ -99,12 +99,12 @@ void Widget::file_search_cursor(){
         //qDebug()<<cnt++;
 
         highlightCursor = document->find(keyword, highlightCursor,
-                                                     QTextDocument::FindWholeWords);
+                                         QTextDocument::FindWholeWords);
 
         if (!highlightCursor.isNull()) {
             found = true;
             highlightCursor.movePosition(QTextCursor::WordRight,
-                                                 QTextCursor::KeepAnchor);
+                                         QTextCursor::KeepAnchor);
 
             if(cnt == cursor_point){
                 highlightCursor.mergeCharFormat(backcolorFormat);
@@ -122,12 +122,12 @@ void Widget::file_search_cursor(){
         }
     }
 
-        cursor.endEditBlock();
-        if (found == false) {
-                   QMessageBox::information(this, tr("Word Not Found"),
-                                            tr("Sorry, the word cannot be found."));
+    cursor.endEditBlock();
+    if (found == false) {
+        QMessageBox::information(this, tr("Word Not Found"),
+                                 tr("Sorry, the word cannot be found."));
 
-        }
+    }
 
 
 
@@ -177,22 +177,22 @@ void Widget::file_search_right(){
         //colorFormat.setBackground(Qt::black);
 
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
-                    highlightCursor = document->find(keyword, highlightCursor,
-                                                     QTextDocument::FindWholeWords);
-                //qDebug()<<"search";
-                cursor_cnt++;
-                if (!highlightCursor.isNull()) {
-                        found = true;
-                        highlightCursor.movePosition(QTextCursor::WordRight,
-                                                     QTextCursor::KeepAnchor);
-                        highlightCursor.mergeCharFormat(colorFormat);
-                }
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+            //qDebug()<<"search";
+            cursor_cnt++;
+            if (!highlightCursor.isNull()) {
+                found = true;
+                highlightCursor.movePosition(QTextCursor::WordRight,
+                                             QTextCursor::KeepAnchor);
+                highlightCursor.mergeCharFormat(colorFormat);
+            }
         }
 
         cursor.endEditBlock();
         if (found == false) {
-                   QMessageBox::information(this, tr("Word Not Found"),
-                                            tr("Sorry, the word cannot be found."));
+            QMessageBox::information(this, tr("Word Not Found"),
+                                     tr("Sorry, the word cannot be found."));
         }
 
 
@@ -243,12 +243,12 @@ void Widget::file_search_cursor_right(){
         //qDebug()<<cnt++;
 
         highlightCursor = document->find(keyword, highlightCursor,
-                                                     QTextDocument::FindWholeWords);
+                                         QTextDocument::FindWholeWords);
 
         if (!highlightCursor.isNull()) {
             found = true;
             highlightCursor.movePosition(QTextCursor::WordRight,
-                                                 QTextCursor::KeepAnchor);
+                                         QTextCursor::KeepAnchor);
 
             if(cnt == cursor_point){
                 highlightCursor.mergeCharFormat(backcolorFormat);
@@ -266,12 +266,12 @@ void Widget::file_search_cursor_right(){
         }
     }
 
-        cursor.endEditBlock();
-        if (found == false) {
-                   QMessageBox::information(this, tr("Word Not Found"),
-                                            tr("Sorry, the word cannot be found."));
+    cursor.endEditBlock();
+    if (found == false) {
+        QMessageBox::information(this, tr("Word Not Found"),
+                                 tr("Sorry, the word cannot be found."));
 
-        }
+    }
 
 
 

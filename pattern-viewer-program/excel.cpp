@@ -8,7 +8,7 @@
 void Widget::excel_read(){
     Document xlsxR("/home/hyunwook/pattern-viwer/Pattern-Viewer/configuration.xlsx");
     if (xlsxR.load()) // load excel file
-        {      
+        {
             //Division Item Type Size Size(Byte) (2,0) ~ (32,4)
 
 

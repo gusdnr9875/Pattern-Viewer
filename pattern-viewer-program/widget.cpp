@@ -34,8 +34,8 @@ Widget::Widget(QWidget *parent) :
     ui->textedit->setText(string_arr);
 
 
-   ui->textedit2->setText(right_total());
-   // printheader_left();
+    ui->textedit2->setText(right_total());
+    // printheader_left();
 
 
 
@@ -43,11 +43,11 @@ Widget::Widget(QWidget *parent) :
 
 
 
-   division_FileHeader();
-   division_CommonHeader();
-   division_CommonBody();
-   division_blockHeader();
-   //division_blockBody();
+    division_FileHeader();
+    division_CommonHeader();
+    division_CommonBody();
+    division_blockHeader();
+    division_blockBody();
 }
 
 Widget::~Widget()

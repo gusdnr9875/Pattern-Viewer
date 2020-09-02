@@ -29,7 +29,7 @@ void Widget::division_FileHeader(){
                 ui->tablewidget->setItem(i,j,item);
             }
 
-             item->setText(excelformat[i+1][j]);
+            item->setText(excelformat[i+1][j]);
 
         }
 
@@ -40,7 +40,7 @@ void Widget::division_FileHeader(){
             ui->tablewidget->setItem(i,3,item);
         }
 
-            item->setText(excelformat[i+1][4]);
+        item->setText(excelformat[i+1][4]);
 
         //contents
         if(i==0){
@@ -50,7 +50,7 @@ void Widget::division_FileHeader(){
                 ui->tablewidget->setItem(i,4,item);
             }
 
-                item->setText("content");
+            item->setText("content");
 
         }
         else{
@@ -64,22 +64,22 @@ void Widget::division_FileHeader(){
             //excelformat[i+1][4]
             QString afterdata;
             if(excelformat[i + 1][2]=="unsigned int" || excelformat[i + 1][2]=="int"){
-                        int cnt = 0;
-                        for(int j=started;j<ended;j++){
-                           if(cnt!=0)
-                               afterdata.append(" ");
-                            if(cnt%32==0 && cnt!=0)
-                                afterdata.append("\n");
-                            cnt++;
-                            QByteArray temp;
-                            temp.append(filedata.at(j));
-                            afterdata.append(temp.toHex());
-                         }
-                    }
-                    else if(excelformat[i + 1][2]=="char"){
-                        for(int j=started;j<ended;j++)
-                            afterdata.append(filedata.at(j));
-                    }
+                int cnt = 0;
+                for(int j=started;j<ended;j++){
+                    if(cnt!=0)
+                        afterdata.append(" ");
+                    if(cnt%32==0 && cnt!=0)
+                        afterdata.append("\n");
+                    cnt++;
+                    QByteArray temp;
+                    temp.append(filedata.at(j));
+                    afterdata.append(temp.toHex());
+                }
+            }
+            else if(excelformat[i + 1][2]=="char"){
+                for(int j=started;j<ended;j++)
+                    afterdata.append(filedata.at(j));
+            }
 
 
             QTableWidgetItem* item = ui->tablewidget->item(i,4);
@@ -88,8 +88,8 @@ void Widget::division_FileHeader(){
                 ui->tablewidget->setItem(i,4,item);
             }
 
-                item->setText(afterdata);
-                //qDebug()<<afterdata;
+            item->setText(afterdata);
+            //qDebug()<<afterdata;
 
         }
 
@@ -128,71 +128,71 @@ void Widget::division_CommonHeader(){
 
         if(excelformat[i][0] == "COMMON HEADER"){
 
-        for(int j=0;j<3;j++){
-            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,j);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget2->setItem(current_pos,j,item);
+            for(int j=0;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,j);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget2->setItem(current_pos,j,item);
+                }
+
+                item->setText(excelformat[i][j]);
+
             }
 
-             item->setText(excelformat[i][j]);
-
-        }
-
-        //size(byte)
-        QTableWidgetItem* item = ui->tablewidget2->item(current_pos,3);
-        if(!item){
-            item = new QTableWidgetItem();
-            ui->tablewidget2->setItem(current_pos,3,item);
-        }
+            //size(byte)
+            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,3);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget2->setItem(current_pos,3,item);
+            }
 
             item->setText(excelformat[i][4]);
 
-        //contents
-        if(i==0){
-            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget2->setItem(current_pos,4,item);
-            }
+            //contents
+            if(i==0){
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget2->setItem(current_pos,4,item);
+                }
 
                 item->setText("content");
 
-        }
-        else{/* error */
-
-
-            //excelformat[i+1][4]
-            QString afterdata;
-            if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
-                        int cnt = 0;
-                        for(int j=started;j<ended;j++){
-                           if(cnt!=0)
-                               afterdata.append(" ");
-                            if(cnt%32==0 && cnt!=0)
-                                afterdata.append("\n");
-                            cnt++;
-                            QByteArray temp;
-                            temp.append(filedata.at(j));
-                            afterdata.append(temp.toHex());
-                         }
-                    }
-                    else if(excelformat[i][2]=="char"){
-                        for(int j=started;j<ended;j++)
-                            afterdata.append(filedata.at(j));
-                    }
-
-
-            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget2->setItem(current_pos++,4,item);
             }
+            else{/* error */
+
+
+                //excelformat[i+1][4]
+                QString afterdata;
+                if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
+                    int cnt = 0;
+                    for(int j=started;j<ended;j++){
+                        if(cnt!=0)
+                            afterdata.append(" ");
+                        if(cnt%32==0 && cnt!=0)
+                            afterdata.append("\n");
+                        cnt++;
+                        QByteArray temp;
+                        temp.append(filedata.at(j));
+                        afterdata.append(temp.toHex());
+                    }
+                }
+                else if(excelformat[i][2]=="char"){
+                    for(int j=started;j<ended;j++)
+                        afterdata.append(filedata.at(j));
+                }
+
+
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget2->setItem(current_pos++,4,item);
+                }
 
                 item->setText(afterdata);
                 //qDebug()<<afterdata;
 
-        }
+            }
 
 
         }
@@ -224,14 +224,14 @@ void Widget::division_CommonBody(){
         ended += excelformat[i][4].toInt();
 
         if(excelformat[i][0] == "COMMON HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r"){
-           QByteArray temp;
+            QByteArray temp;
 
-           temp.append(filedata.at(started));
+            temp.append(filedata.at(started));
 
-           bool ok;
+            bool ok;
 
-           common_r = temp.toHex().toInt(&ok,16);
-           //qDebug()<<common_r;
+            common_r = temp.toHex().toInt(&ok,16);
+            //qDebug()<<common_r;
         }
         else if(excelformat[i][0] == "COMMON HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
             QByteArray temp;
@@ -242,7 +242,7 @@ void Widget::division_CommonBody(){
             bool ok;
 
             common_s = temp.toHex().toInt(&ok,16);
-           //qDebug()<<common_s;
+            //qDebug()<<common_s;
         }
 
 
@@ -259,76 +259,76 @@ void Widget::division_CommonBody(){
     started=0,ended=0;
     for(int i=0;i<33;i++){
 
-            started = ended;
-            ended += excelformat[i][4].toInt();
+        started = ended;
+        ended += excelformat[i][4].toInt();
 
 
         if(excelformat[i][0] == "COMMON BODY"){
-        for(int j=0;j<3;j++){
-            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,j);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget3->setItem(current_pos,j,item);
+            for(int j=0;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,j);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget3->setItem(current_pos,j,item);
+                }
+
+                item->setText(excelformat[i][j]);
+
             }
 
-             item->setText(excelformat[i][j]);
-
-        }
-
-        //size(byte)
-        QTableWidgetItem* item = ui->tablewidget3->item(current_pos,3);
-        if(!item){
-            item = new QTableWidgetItem();
-            ui->tablewidget3->setItem(current_pos,3,item);
-        }
+            //size(byte)
+            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,3);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget3->setItem(current_pos,3,item);
+            }
 
             item->setText(excelformat[i][4]);
 
-        //contents
-        if(i==0){
-            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget3->setItem(current_pos,4,item);
-            }
+            //contents
+            if(i==0){
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget3->setItem(current_pos,4,item);
+                }
 
                 item->setText("content");
 
-        }
-        else{
-
-
-
-            QString afterdata;
-            if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
-                        int cnt = 0;
-                        for(int j=started;j<ended;j++){
-                           if(cnt!=0)
-                               afterdata.append(" ");
-                            if(cnt%32==0 && cnt!=0)
-                                afterdata.append("\n");
-                            cnt++;
-                            QByteArray temp;
-                            temp.append(filedata.at(j));
-                            afterdata.append(temp.toHex());
-                         }
-                    }
-                    else if(excelformat[i][2]=="char"){
-                        for(int j=started;j<ended;j++)
-                            afterdata.append(filedata.at(j));
-                    }
-
-
-            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget3->setItem(current_pos++,4,item);
             }
+            else{
+
+
+
+                QString afterdata;
+                if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
+                    int cnt = 0;
+                    for(int j=started;j<ended;j++){
+                        if(cnt!=0)
+                            afterdata.append(" ");
+                        if(cnt%32==0 && cnt!=0)
+                            afterdata.append("\n");
+                        cnt++;
+                        QByteArray temp;
+                        temp.append(filedata.at(j));
+                        afterdata.append(temp.toHex());
+                    }
+                }
+                else if(excelformat[i][2]=="char"){
+                    for(int j=started;j<ended;j++)
+                        afterdata.append(filedata.at(j));
+                }
+
+
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget3->setItem(current_pos++,4,item);
+                }
 
                 item->setText(afterdata);
                 //qDebug()<<afterdata;
 
-        }
+            }
 
 
         }
@@ -398,71 +398,71 @@ void Widget::division_blockHeader(){
 
         if(excelformat[i][0] == "BLOCK1 HEADER"){
 
-        for(int j=0;j<3;j++){
-            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget4->setItem(current_pos,j,item);
+            for(int j=0;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget4->setItem(current_pos,j,item);
+                }
+
+                item->setText(excelformat[i][j]);
+
             }
 
-             item->setText(excelformat[i][j]);
-
-        }
-
-        //size(byte)
-        QTableWidgetItem* item = ui->tablewidget4->item(current_pos,3);
-        if(!item){
-            item = new QTableWidgetItem();
-            ui->tablewidget4->setItem(current_pos,3,item);
-        }
+            //size(byte)
+            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,3);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget4->setItem(current_pos,3,item);
+            }
 
             item->setText(excelformat[i][4]);
 
-        //contents
-        if(i==0){
-            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget4->setItem(current_pos,4,item);
-            }
+            //contents
+            if(i==0){
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget4->setItem(current_pos,4,item);
+                }
 
                 item->setText("content");
 
-        }
-        else{
-
-
-            //excelformat[i+1][4]
-            QString afterdata;
-            if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
-                        int cnt = 0;
-                        for(int j=started;j<ended;j++){
-                           if(cnt!=0)
-                               afterdata.append(" ");
-                            if(cnt%32==0 && cnt!=0)
-                                afterdata.append("\n");
-                            cnt++;
-                            QByteArray temp;
-                            temp.append(filedata.at(j));
-                            afterdata.append(temp.toHex());
-                         }
-                    }
-                    else if(excelformat[i][2]=="char"){
-                        for(int j=started;j<ended;j++)
-                            afterdata.append(filedata.at(j));
-                    }
-
-
-            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
-            if(!item){
-                item = new QTableWidgetItem();
-                ui->tablewidget4->setItem(current_pos++,4,item);
             }
+            else{
+
+
+                //excelformat[i+1][4]
+                QString afterdata;
+                if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
+                    int cnt = 0;
+                    for(int j=started;j<ended;j++){
+                        if(cnt!=0)
+                            afterdata.append(" ");
+                        if(cnt%32==0 && cnt!=0)
+                            afterdata.append("\n");
+                        cnt++;
+                        QByteArray temp;
+                        temp.append(filedata.at(j));
+                        afterdata.append(temp.toHex());
+                    }
+                }
+                else if(excelformat[i][2]=="char"){
+                    for(int j=started;j<ended;j++)
+                        afterdata.append(filedata.at(j));
+                }
+
+
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget4->setItem(current_pos++,4,item);
+                }
 
                 item->setText(afterdata);
                 //qDebug()<<afterdata;
 
-        }
+            }
 
 
         }
@@ -476,3 +476,113 @@ void Widget::division_blockHeader(){
 
 
 }
+
+
+void Widget::division_blockBody(){
+
+    QByteArray filedata = get_file_arr(); //  get file data
+    int fileheadercnt =0;
+    int started=33601;
+    int ended=33601;
+
+    for(int i=0;i<33;i++){
+        if(excelformat[i][0] == "BLOCK1 BODY")
+            fileheadercnt++;
+    }
+
+    fileheadercnt++;
+    ui->tablewidget5->setRowCount(fileheadercnt);
+    ui->tablewidget5->setColumnCount(5);
+    ui->tablewidget5->setColumnWidth(4,1000);
+
+
+    int current_pos =0;
+   // qDebug()<<filedata.length();
+    for(int i=0;i<=33;i++){
+        //qDebug()<<"ended  "<<ended;
+       // qDebug()<< i;
+        if(excelformat[i][0] == "BLOCK1 BODY"){
+
+            if(i==32){
+                started = ended;
+                ended = 75724;
+            }
+            else if(i==30)
+            else if(current_pos == 0){
+                ended += excelformat[i][4].toInt();
+            }
+            else{
+                started = ended;
+                ended += excelformat[i][4].toInt();
+            }
+
+
+            for(int j=0;j<3;j++){
+
+                QTableWidgetItem* item = ui->tablewidget5->item(current_pos,j);
+                if(!item){
+                    item = new QTableWidgetItem();
+                    ui->tablewidget5->setItem(current_pos,j,item);
+                }
+
+                item->setText(excelformat[i][j]);
+
+            }
+
+            //size(byte)
+            QTableWidgetItem* item = ui->tablewidget5->item(current_pos,3);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget5->setItem(current_pos,3,item);
+            }
+
+            item->setText(excelformat[i][4]);
+
+
+
+
+            // add data
+
+            QString afterdata;
+            if(excelformat[i][2]=="unsigned int" || excelformat[i][2]=="int"){
+                int cnt = 0;
+                for(int j=started;j<ended;j++){
+                    if(cnt!=0)
+                        afterdata.append(" ");
+                    if(cnt%32==0 && cnt!=0)
+                        afterdata.append("\n");
+                    cnt++;
+                    QByteArray temp;
+                    temp.append(filedata.at(j));
+                    afterdata.append(temp.toHex());
+                }
+            }
+            else if(excelformat[i][2]=="char"){
+                for(int j=started;j<ended;j++)
+                    afterdata.append(filedata.at(j));
+            }
+
+
+            item = ui->tablewidget5->item(current_pos,4);
+            if(!item){
+                item = new QTableWidgetItem();
+                ui->tablewidget5->setItem(current_pos++,4,item);
+            }
+
+            item->setText(afterdata);
+
+
+        }
+
+
+
+
+
+    }
+
+
+}
+
+
+
+
