@@ -166,6 +166,8 @@ public:
         tablewidget3 = new QTableWidget(tab_4);
         tablewidget3->setObjectName(QStringLiteral("tablewidget3"));
         tablewidget3->setGeometry(QRect(10, 10, 751, 681));
+        tablewidget3->setMouseTracking(false);
+        tablewidget3->setFocusPolicy(Qt::StrongFocus);
         tabwidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
@@ -243,7 +245,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabwidget->setCurrentIndex(0);
+        tabwidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Widget);

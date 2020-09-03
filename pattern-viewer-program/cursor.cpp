@@ -4,16 +4,116 @@
 #include "format.h"
 
 
+void Widget::get_r_s_p(){
+
+
+    QByteArray filedata = get_file_arr(); //  get file data
+    int started =0;
+    int ended =0;
+
+    for(int i=0;i<=33;i++){
+
+        if(i==2)
+            ended = excelformat[i][4].toInt();
+        else{
+            started = ended;
+            ended += excelformat[i][4].toInt();
+        }
+        if(excelformat[i][0]=="COMMON BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
+
+            QByteArray temp;
+
+            temp.append(filedata.at(started));
+
+            bool ok;
+
+            commonbody_r =  temp.toHex().toInt(&ok,16);
+
+            // qDebug()<<blockbody_r;
+        }
+        else if(excelformat[i][0]=="COMMON BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
+
+
+            QByteArray temp;
+
+            temp.append(filedata.at(started));
+
+            bool ok;
+
+            commonbody_s =  temp.toHex().toInt(&ok,16);
+
+            // qDebug()<<blockbody_s;
+
+        }
+
+        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
+
+
+            QByteArray temp;
+
+            temp.append(filedata.at(started));
+
+            bool ok;
+
+            blockbody_r =  temp.toHex().toInt(&ok,16);
+
+            // qDebug()<<blockbody_s;
+
+        }
+
+        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
+
+
+            QByteArray temp;
+
+            temp.append(filedata.at(started));
+
+            bool ok;
+
+            blockbody_s =  temp.toHex().toInt(&ok,16);
+
+            // qDebug()<<blockbody_s;
+
+        }
+
+
+        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "Micro Pattern" ){
+
+
+            QByteArray temp;
+
+            temp.append(filedata.at(started));
+
+            bool ok;
+
+            blockbody_p =  temp.toHex().toInt(&ok,16);
+
+            // qDebug()<<blockbody_s;
+
+        }
+
+    /*
+     error!! debug
+     */
+
+    }
+}
+
+
+
 void Widget::set_startingarr(){
 
-    int started=0;
+
+
+
+   int  started=0;
     int ended =0;
 
     //CommonHeader
     for(int i=0;i<=33;i++){
         if(excelformat[i][0] == "File Header"){
-        started = ended;
-        ended += excelformat[i][4].toInt();
+            started = ended;
+            ended += excelformat[i][4].toInt();
         }
     }
 
@@ -22,8 +122,8 @@ void Widget::set_startingarr(){
     //CommonBody
     for(int i=0;i<=33;i++){
         if(excelformat[i][0] == "COMMON HEADER"){
-        started = ended;
-        ended += excelformat[i][4].toInt();
+            started = ended;
+            ended += excelformat[i][4].toInt();
         }
 
     }
@@ -70,7 +170,8 @@ void Widget::on_radioButton1_1_clicked()
 {
     QString keyword = "line ";
     keyword.append(QString::number( fileheader_startingarr/16 + 1 ));
-    qDebug()<<keyword;
+
+    //qDebug()<<keyword;
 
     QTextDocument *document = ui->textedit ->document();
 
@@ -96,14 +197,14 @@ void Widget::on_radioButton1_1_clicked()
         QTextCharFormat plainFormat(highlightCursor.charFormat());
         QTextCharFormat colorFormat = plainFormat;
 
-       // colorFormat.setForeground(Qt::red);
+        // colorFormat.setForeground(Qt::red);
         //colorFormat.setBackground(Qt::black);
 
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
             highlightCursor = document->find(keyword, highlightCursor,
                                              QTextDocument::FindWholeWords);
             //qDebug()<<"search";
-          //  cursor_cnt++;
+            //  cursor_cnt++;
             if (!highlightCursor.isNull()) {
                 found = true;
                 highlightCursor.movePosition(QTextCursor::WordRight,
@@ -139,7 +240,7 @@ void Widget::on_radioButton1_2_clicked()
 {
     QString keyword = "line ";
     keyword.append(QString::number( commonheader_startingarr/16 + 1 ));
-    qDebug()<<keyword;
+    //qDebug()<<keyword;
 
     QTextDocument *document = ui->textedit ->document();
 
@@ -165,14 +266,14 @@ void Widget::on_radioButton1_2_clicked()
         QTextCharFormat plainFormat(highlightCursor.charFormat());
         QTextCharFormat colorFormat = plainFormat;
 
-       // colorFormat.setForeground(Qt::red);
+        // colorFormat.setForeground(Qt::red);
         //colorFormat.setBackground(Qt::black);
 
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
             highlightCursor = document->find(keyword, highlightCursor,
                                              QTextDocument::FindWholeWords);
             //qDebug()<<"search";
-          //  cursor_cnt++;
+            //  cursor_cnt++;
             if (!highlightCursor.isNull()) {
                 found = true;
                 highlightCursor.movePosition(QTextCursor::WordRight,
@@ -205,7 +306,7 @@ void Widget::on_radioButton1_3_clicked()
 {
     QString keyword = "line ";
     keyword.append(QString::number( commonbody_startingarr/16 + 1 ));
-    qDebug()<<keyword;
+    //qDebug()<<keyword;
 
     QTextDocument *document = ui->textedit ->document();
 
@@ -231,14 +332,14 @@ void Widget::on_radioButton1_3_clicked()
         QTextCharFormat plainFormat(highlightCursor.charFormat());
         QTextCharFormat colorFormat = plainFormat;
 
-       // colorFormat.setForeground(Qt::red);
+        // colorFormat.setForeground(Qt::red);
         //colorFormat.setBackground(Qt::black);
 
         while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
             highlightCursor = document->find(keyword, highlightCursor,
                                              QTextDocument::FindWholeWords);
             //qDebug()<<"search";
-          //  cursor_cnt++;
+            //  cursor_cnt++;
             if (!highlightCursor.isNull()) {
                 found = true;
                 highlightCursor.movePosition(QTextCursor::WordRight,

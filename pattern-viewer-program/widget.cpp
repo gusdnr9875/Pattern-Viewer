@@ -27,6 +27,8 @@ Widget::Widget(QWidget *parent) :
 
 
     excel_read();
+    get_r_s_p();
+    set_startingarr();
 
 
     ui->filename->setText(get_filename());
@@ -34,7 +36,7 @@ Widget::Widget(QWidget *parent) :
     ui->textedit->setText(string_arr);
 
 
-   // ui->textedit2->setText(right_total());
+    ui->textedit2->setText(right_total());
 
 
 
@@ -45,7 +47,7 @@ Widget::Widget(QWidget *parent) :
    // division_blockBody();
 
 
-    set_startingarr();
+
 }
 
 Widget::~Widget()

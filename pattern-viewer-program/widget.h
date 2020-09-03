@@ -105,6 +105,7 @@ private:
     int commonbody_s;
     int blockbody_r;
     int blockbody_s;
+    int blockbody_p;
 
     int fileheader_startingarr = 0; //ok
     int commonheader_startingarr;
@@ -118,6 +119,9 @@ private:
     QString right_total();
 
     QString excelformat[100][10];
+
+    //get r,s,p
+    void get_r_s_p();
 
 
     //format division view
