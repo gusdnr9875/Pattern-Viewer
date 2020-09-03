@@ -34,12 +34,7 @@ Widget::Widget(QWidget *parent) :
     ui->textedit->setText(string_arr);
 
 
-    ui->textedit2->setText(right_total());
-    // printheader_left();
-
-
-
-
+   // ui->textedit2->setText(right_total());
 
 
 
@@ -47,7 +42,10 @@ Widget::Widget(QWidget *parent) :
     division_CommonHeader();
     division_CommonBody();
     division_blockHeader();
-    division_blockBody();
+   // division_blockBody();
+
+
+    set_startingarr();
 }
 
 Widget::~Widget()
@@ -127,10 +125,15 @@ void Widget::on_fileSelect_clicked()
     ui->textedit->setText(string_arr);
     ui->textedit2->setText(right_total());
 
-    //printheader_left();
+
 
 
 }
+
+
+
+
+
 
 
 

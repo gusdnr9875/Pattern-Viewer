@@ -76,6 +76,12 @@ private slots:
 
     void on_nextbutton2_clicked();
 
+    void on_radioButton1_1_clicked();
+
+    void on_radioButton1_2_clicked();
+
+    void on_radioButton1_3_clicked();
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
@@ -95,12 +101,16 @@ private:
     void file_search_right(); //right view
     void file_search_cursor_right();//right view
 
-
     int commonbody_r; //format
     int commonbody_s;
-    int blockheader_startingarr;
     int blockbody_r;
     int blockbody_s;
+
+    int fileheader_startingarr = 0; //ok
+    int commonheader_startingarr;
+    int commonbody_startingarr;
+    int blockheader_startingarr; // set to division.cpp
+    int blockbody_startingarr;
 
 
     void excel_read(); // excel read and store excelformat!
@@ -116,6 +126,10 @@ private:
     void division_CommonBody();
     void division_blockHeader();
     void division_blockBody();
+
+    //radion button cursor
+    void set_startingarr();
+
 
 
 };

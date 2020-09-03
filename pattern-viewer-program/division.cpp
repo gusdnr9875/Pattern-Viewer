@@ -240,8 +240,8 @@ void Widget::division_CommonBody(){
             QByteArray temp;
 
             temp.append(filedata.at(started));
-           // qDebug()<<common_s;
-           // qDebug()<<temp;
+            // qDebug()<<common_s;
+            // qDebug()<<temp;
             bool ok;
 
             common_s = temp.toHex().toInt(&ok,16);
@@ -406,7 +406,7 @@ void Widget::division_blockHeader(){
 
             if(excelformat[i][1] == "Reserved" ){
                blockheader_startingarr = ended;
-               qDebug()<<ended;
+             //  qDebug()<<ended;
             }
             else if(excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
 

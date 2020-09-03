@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1451</width>
-    <height>858</height>
+    <width>1502</width>
+    <height>879</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <rect>
      <x>20</x>
      <y>70</y>
-     <width>581</width>
+     <width>651</width>
      <height>671</height>
     </rect>
    </property>
@@ -57,7 +57,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>770</y>
+     <y>750</y>
      <width>61</width>
      <height>31</height>
     </rect>
@@ -87,7 +87,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>770</y>
+     <y>750</y>
      <width>321</width>
      <height>28</height>
     </rect>
@@ -96,8 +96,8 @@
   <widget class="QPushButton" name="search_button1">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>770</y>
+     <x>470</x>
+     <y>750</y>
      <width>84</width>
      <height>28</height>
     </rect>
@@ -112,8 +112,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>810</y>
+     <x>470</x>
+     <y>790</y>
      <width>84</width>
      <height>28</height>
     </rect>
@@ -125,8 +125,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>770</y>
+     <x>710</x>
+     <y>750</y>
      <width>61</width>
      <height>31</height>
     </rect>
@@ -155,8 +155,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>770</y>
+     <x>780</x>
+     <y>750</y>
      <width>321</width>
      <height>28</height>
     </rect>
@@ -165,8 +165,8 @@
   <widget class="QPushButton" name="search_button2">
    <property name="geometry">
     <rect>
-     <x>1070</x>
-     <y>770</y>
+     <x>1140</x>
+     <y>750</y>
      <width>84</width>
      <height>28</height>
     </rect>
@@ -181,8 +181,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>1070</x>
-     <y>810</y>
+     <x>1140</x>
+     <y>790</y>
      <width>84</width>
      <height>28</height>
     </rect>
@@ -194,8 +194,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>1210</x>
-     <y>840</y>
+     <x>1270</x>
+     <y>860</y>
      <width>231</width>
      <height>20</height>
     </rect>
@@ -207,7 +207,7 @@
   <widget class="QPushButton" name="fileSelect">
    <property name="geometry">
     <rect>
-     <x>1280</x>
+     <x>1330</x>
      <y>770</y>
      <width>151</width>
      <height>28</height>
@@ -220,8 +220,8 @@
   <widget class="QLabel" name="filename">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>840</y>
+     <x>0</x>
+     <y>860</y>
      <width>1031</width>
      <height>20</height>
     </rect>
@@ -233,7 +233,7 @@
   <widget class="QPushButton" name="close">
    <property name="geometry">
     <rect>
-     <x>1280</x>
+     <x>1330</x>
      <y>810</y>
      <width>151</width>
      <height>28</height>
@@ -246,9 +246,9 @@
   <widget class="QTabWidget" name="tabwidget">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>20</y>
-     <width>751</width>
+     <x>700</x>
+     <y>10</y>
+     <width>771</width>
      <height>731</height>
     </rect>
    </property>
@@ -259,7 +259,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="tabsClosable">
     <bool>false</bool>
@@ -274,10 +274,10 @@
     <widget class="QTextEdit" name="textedit2">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>10</x>
        <y>10</y>
        <width>751</width>
-       <height>701</height>
+       <height>681</height>
       </rect>
      </property>
      <property name="undoRedoEnabled">
@@ -294,8 +294,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>691</width>
-       <height>691</height>
+       <width>751</width>
+       <height>681</height>
       </rect>
      </property>
      <property name="sortingEnabled">
@@ -312,8 +312,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>721</width>
-       <height>671</height>
+       <width>751</width>
+       <height>681</height>
       </rect>
      </property>
     </widget>
@@ -327,7 +327,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>721</width>
+       <width>751</width>
        <height>681</height>
       </rect>
      </property>
@@ -342,7 +342,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>721</width>
+       <width>751</width>
        <height>681</height>
       </rect>
      </property>
@@ -357,13 +357,214 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>721</width>
+       <width>751</width>
        <height>681</height>
       </rect>
      </property>
     </widget>
    </widget>
   </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>760</y>
+     <width>401</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="radioButton1_1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>File Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton1_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>131</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Common Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton1_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Common Body</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton1_4">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Block Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton1_5">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>106</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Block Body</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox2">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>760</y>
+     <width>401</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="radioButton2_1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>File Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton2_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>131</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Common Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton2_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Common Body</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton2_4">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Block Header</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton2_5">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>106</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Block Body</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="clear">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>830</y>
+     <width>84</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clear2">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>830</y>
+     <width>84</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </widget>
+  <zorder>textedit</zorder>
+  <zorder>label</zorder>
+  <zorder>label_1</zorder>
+  <zorder>search_button1</zorder>
+  <zorder>nextbutton1</zorder>
+  <zorder>label_2</zorder>
+  <zorder>search_button2</zorder>
+  <zorder>nextbutton2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>fileSelect</zorder>
+  <zorder>filename</zorder>
+  <zorder>close</zorder>
+  <zorder>tabwidget</zorder>
+  <zorder>groupBox2</zorder>
+  <zorder>clear</zorder>
+  <zorder>clear2</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>keyword1</zorder>
+  <zorder>keyword2</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

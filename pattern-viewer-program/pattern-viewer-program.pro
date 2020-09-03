@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     search.cpp \
     format.cpp \
     excel.cpp \
-    division.cpp
+    division.cpp \
+    cursor.cpp
 
 HEADERS  += widget.h \
     file.h \
