@@ -237,8 +237,8 @@ void Widget::division_CommonBody(){
             QByteArray temp;
 
             temp.append(filedata.at(started));
-            qDebug()<<common_s;
-            qDebug()<<temp;
+           // qDebug()<<common_s;
+           // qDebug()<<temp;
             bool ok;
 
             common_s = temp.toHex().toInt(&ok,16);
@@ -362,8 +362,6 @@ void Widget::division_CommonBody(){
 void Widget::division_blockHeader(){
 
 
-
-
     QByteArray filedata = get_file_arr(); //  get file data
     int fileheadercnt =0;
     int started=0;
@@ -397,6 +395,39 @@ void Widget::division_blockHeader(){
         }
 
         if(excelformat[i][0] == "BLOCK1 HEADER"){
+
+
+
+            if(excelformat[i][1] == "Reserved" ){
+               blockheader_startingarr = ended;
+               qDebug()<<ended;
+            }
+            else if(excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
+
+                QByteArray temp;
+
+                temp.append(filedata.at(started));
+
+                bool ok;
+
+                blockbody_r =  temp.toHex().toInt(&ok,16);
+
+               // qDebug()<<blockbody_r;
+            }
+            else if(excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
+
+
+                QByteArray temp;
+
+                temp.append(filedata.at(started));
+
+                bool ok;
+
+                blockbody_s =  temp.toHex().toInt(&ok,16);
+
+               // qDebug()<<blockbody_s;
+
+             }
 
             for(int j=0;j<3;j++){
                 QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j);
@@ -474,7 +505,6 @@ void Widget::division_blockHeader(){
 
 
 
-
 }
 
 
@@ -482,39 +512,44 @@ void Widget::division_blockBody(){
 
     QByteArray filedata = get_file_arr(); //  get file data
     int fileheadercnt =0;
-    int started=33601;
-    int ended=33601;
+    int started=0;
+    int ended=0;
 
     for(int i=0;i<33;i++){
+
         if(excelformat[i][0] == "BLOCK1 BODY")
             fileheadercnt++;
+
     }
 
     fileheadercnt++;
-    ui->tablewidget5->setRowCount(fileheadercnt);
+    ui->tablewidget5->setRowCount(fileheadercnt+ blockbody_r*2 + blockbody_s*2 - 4);
+   // qDebug()<<fileheadercnt+ blockbody_r + blockbody_s - 2;
     ui->tablewidget5->setColumnCount(5);
     ui->tablewidget5->setColumnWidth(4,1000);
 
-
+    int br = blockbody_r;
+    int bs = blockbody_s;
     int current_pos =0;
-   // qDebug()<<filedata.length();
+    started=blockheader_startingarr;
+    ended= blockheader_startingarr;
     for(int i=0;i<=33;i++){
-        //qDebug()<<"ended  "<<ended;
-       // qDebug()<< i;
+
         if(excelformat[i][0] == "BLOCK1 BODY"){
 
-            if(i==32){
-                started = ended;
-                ended = 75724;
-            }
-            else if(i==30)
-            else if(current_pos == 0){
+
+            //qDebug()<<ended;
+            //qDebug()<<filedata.length();
+            if(current_pos == 0){
                 ended += excelformat[i][4].toInt();
             }
             else{
                 started = ended;
                 ended += excelformat[i][4].toInt();
             }
+
+
+
 
 
             for(int j=0;j<3;j++){
@@ -570,6 +605,16 @@ void Widget::division_blockBody(){
             }
 
             item->setText(afterdata);
+
+
+            if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA" && (br - 1) > 0){
+                br--;
+                i-=2;
+            }
+            else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(64bit) DATA" && (bs - 1) > 0){
+                bs--;
+                i-=2;
+            }
 
 
         }

@@ -88,13 +88,19 @@ private:
     int cursor_position_right =0;
     int cursor_total =0; //total cursor count
     int cursor_total_right =0;
-    int commonbody_r;
-    int commonbody_s;
+
     void file_read(); // file open and read
     void file_search(); // all keyword search
     void file_search_cursor();  //cursor find
     void file_search_right(); //right view
     void file_search_cursor_right();//right view
+
+
+    int commonbody_r; //format
+    int commonbody_s;
+    int blockheader_startingarr;
+    int blockbody_r;
+    int blockbody_s;
 
 
     void excel_read(); // excel read and store excelformat!
