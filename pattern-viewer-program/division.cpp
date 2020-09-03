@@ -15,18 +15,19 @@ void Widget::division_FileHeader(){
 
     fileheadercnt++;
     ui->tablewidget->setRowCount(fileheadercnt);
-    ui->tablewidget->setColumnCount(5);
-    ui->tablewidget->setColumnWidth(4,1000);
+    ui->tablewidget->setColumnCount(4);
+    ui->tablewidget->setColumnWidth(3,1000);
 
+    ui->tablewidget->setColumnWidth(0,150);
 
 
 
     for(int i=0;i<fileheadercnt;i++){
-        for(int j=0;j<3;j++){
-            QTableWidgetItem* item = ui->tablewidget->item(i,j);
+        for(int j=1;j<3;j++){
+            QTableWidgetItem* item = ui->tablewidget->item(i,j - 1);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget->setItem(i,j,item);
+                ui->tablewidget->setItem(i,j - 1,item);
             }
 
             item->setText(excelformat[i+1][j]);
@@ -34,20 +35,20 @@ void Widget::division_FileHeader(){
         }
 
         //size(byte)
-        QTableWidgetItem* item = ui->tablewidget->item(i,3);
+        QTableWidgetItem* item = ui->tablewidget->item(i,2);
         if(!item){
             item = new QTableWidgetItem();
-            ui->tablewidget->setItem(i,3,item);
+            ui->tablewidget->setItem(i,2,item);
         }
 
         item->setText(excelformat[i+1][4]);
 
         //contents
         if(i==0){
-            QTableWidgetItem* item = ui->tablewidget->item(i,4);
+            QTableWidgetItem* item = ui->tablewidget->item(i,3);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget->setItem(i,4,item);
+                ui->tablewidget->setItem(i,3,item);
             }
 
             item->setText("content");
@@ -82,10 +83,10 @@ void Widget::division_FileHeader(){
             }
 
 
-            QTableWidgetItem* item = ui->tablewidget->item(i,4);
+            QTableWidgetItem* item = ui->tablewidget->item(i,3);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget->setItem(i,4,item);
+                ui->tablewidget->setItem(i,3,item);
             }
 
             item->setText(afterdata);
@@ -118,8 +119,10 @@ void Widget::division_CommonHeader(){
     }
     //qDebug()<<fileheadercnt;
     ui->tablewidget2->setRowCount(fileheadercnt);
-    ui->tablewidget2->setColumnCount(5);
-    ui->tablewidget2->setColumnWidth(4,1000);
+    ui->tablewidget2->setColumnCount(4);
+    ui->tablewidget2->setColumnWidth(3,1000);
+    ui->tablewidget2->setColumnWidth(0,350);
+
 
     int current_pos=0;
     for(int i=0;i<33;i++){
@@ -128,11 +131,11 @@ void Widget::division_CommonHeader(){
 
         if(excelformat[i][0] == "COMMON HEADER"){
 
-            for(int j=0;j<3;j++){
-                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,j);
+            for(int j=1;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,j - 1);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget2->setItem(current_pos,j,item);
+                    ui->tablewidget2->setItem(current_pos,j - 1,item);
                 }
 
                 item->setText(excelformat[i][j]);
@@ -140,20 +143,20 @@ void Widget::division_CommonHeader(){
             }
 
             //size(byte)
-            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,3);
+            QTableWidgetItem* item = ui->tablewidget2->item(current_pos,2);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget2->setItem(current_pos,3,item);
+                ui->tablewidget2->setItem(current_pos,2,item);
             }
 
             item->setText(excelformat[i][4]);
 
             //contents
             if(i==0){
-                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget2->setItem(current_pos,4,item);
+                    ui->tablewidget2->setItem(current_pos,3,item);
                 }
 
                 item->setText("content");
@@ -183,10 +186,10 @@ void Widget::division_CommonHeader(){
                 }
 
 
-                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget2->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget2->setItem(current_pos++,4,item);
+                    ui->tablewidget2->setItem(current_pos++,3,item);
                 }
 
                 item->setText(afterdata);
@@ -251,8 +254,10 @@ void Widget::division_CommonBody(){
     commonbody_r = common_r, commonbody_s = common_s;
     //qDebug()<<fileheadercnt;
     ui->tablewidget3->setRowCount(fileheadercnt);
-    ui->tablewidget3->setColumnCount(5);
-    ui->tablewidget3->setColumnWidth(4,1000);
+    ui->tablewidget3->setColumnCount(4);
+    ui->tablewidget3->setColumnWidth(3,1000);
+    ui->tablewidget3->setColumnWidth(0,180);
+
 
     int current_pos=0;
     fileheadercnt =0;
@@ -264,11 +269,11 @@ void Widget::division_CommonBody(){
 
 
         if(excelformat[i][0] == "COMMON BODY"){
-            for(int j=0;j<3;j++){
-                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,j);
+            for(int j=1;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,j - 1);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget3->setItem(current_pos,j,item);
+                    ui->tablewidget3->setItem(current_pos,j - 1,item);
                 }
 
                 item->setText(excelformat[i][j]);
@@ -276,20 +281,20 @@ void Widget::division_CommonBody(){
             }
 
             //size(byte)
-            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,3);
+            QTableWidgetItem* item = ui->tablewidget3->item(current_pos,2);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget3->setItem(current_pos,3,item);
+                ui->tablewidget3->setItem(current_pos,2,item);
             }
 
             item->setText(excelformat[i][4]);
 
             //contents
             if(i==0){
-                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget3->setItem(current_pos,4,item);
+                    ui->tablewidget3->setItem(current_pos,3,item);
                 }
 
                 item->setText("content");
@@ -319,10 +324,10 @@ void Widget::division_CommonBody(){
                 }
 
 
-                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget3->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget3->setItem(current_pos++,4,item);
+                    ui->tablewidget3->setItem(current_pos++,3,item);
                 }
 
                 item->setText(afterdata);
@@ -375,8 +380,9 @@ void Widget::division_blockHeader(){
     }
     //qDebug()<<fileheadercnt;
     ui->tablewidget4->setRowCount(fileheadercnt);
-    ui->tablewidget4->setColumnCount(5);
-    ui->tablewidget4->setColumnWidth(4,1000);
+    ui->tablewidget4->setColumnCount(4);
+    ui->tablewidget4->setColumnWidth(3,1000);
+    ui->tablewidget4->setColumnWidth(0,350);
 
     int current_pos=0;
     int common_r = commonbody_r;
@@ -429,11 +435,11 @@ void Widget::division_blockHeader(){
 
              }
 
-            for(int j=0;j<3;j++){
-                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j);
+            for(int j=1;j<3;j++){
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j - 1);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget4->setItem(current_pos,j,item);
+                    ui->tablewidget4->setItem(current_pos,j - 1,item);
                 }
 
                 item->setText(excelformat[i][j]);
@@ -441,20 +447,20 @@ void Widget::division_blockHeader(){
             }
 
             //size(byte)
-            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,3);
+            QTableWidgetItem* item = ui->tablewidget4->item(current_pos,2);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget4->setItem(current_pos,3,item);
+                ui->tablewidget4->setItem(current_pos,2,item);
             }
 
             item->setText(excelformat[i][4]);
 
             //contents
             if(i==0){
-                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget4->setItem(current_pos,4,item);
+                    ui->tablewidget4->setItem(current_pos,3,item);
                 }
 
                 item->setText("content");
@@ -484,10 +490,10 @@ void Widget::division_blockHeader(){
                 }
 
 
-                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,4);
+                QTableWidgetItem* item = ui->tablewidget4->item(current_pos,3);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget4->setItem(current_pos++,4,item);
+                    ui->tablewidget4->setItem(current_pos++,3,item);
                 }
 
                 item->setText(afterdata);
@@ -525,8 +531,9 @@ void Widget::division_blockBody(){
     fileheadercnt++;
     ui->tablewidget5->setRowCount(fileheadercnt+ blockbody_r*2 + blockbody_s*2 - 4);
    // qDebug()<<fileheadercnt+ blockbody_r + blockbody_s - 2;
-    ui->tablewidget5->setColumnCount(5);
-    ui->tablewidget5->setColumnWidth(4,1000);
+    ui->tablewidget5->setColumnCount(4);
+    ui->tablewidget5->setColumnWidth(3,1000);
+    ui->tablewidget5->setColumnWidth(0,180);
 
     int br = blockbody_r;
     int bs = blockbody_s;
@@ -538,8 +545,6 @@ void Widget::division_blockBody(){
         if(excelformat[i][0] == "BLOCK1 BODY"){
 
 
-            //qDebug()<<ended;
-            //qDebug()<<filedata.length();
             if(current_pos == 0){
                 ended += excelformat[i][4].toInt();
             }
@@ -552,12 +557,12 @@ void Widget::division_blockBody(){
 
 
 
-            for(int j=0;j<3;j++){
+            for(int j=1;j<3;j++){
 
-                QTableWidgetItem* item = ui->tablewidget5->item(current_pos,j);
+                QTableWidgetItem* item = ui->tablewidget5->item(current_pos,j - 1);
                 if(!item){
                     item = new QTableWidgetItem();
-                    ui->tablewidget5->setItem(current_pos,j,item);
+                    ui->tablewidget5->setItem(current_pos,j - 1,item);
                 }
 
                 item->setText(excelformat[i][j]);
@@ -565,10 +570,10 @@ void Widget::division_blockBody(){
             }
 
             //size(byte)
-            QTableWidgetItem* item = ui->tablewidget5->item(current_pos,3);
+            QTableWidgetItem* item = ui->tablewidget5->item(current_pos,2);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget5->setItem(current_pos,3,item);
+                ui->tablewidget5->setItem(current_pos,2,item);
             }
 
             item->setText(excelformat[i][4]);
@@ -598,10 +603,10 @@ void Widget::division_blockBody(){
             }
 
 
-            item = ui->tablewidget5->item(current_pos,4);
+            item = ui->tablewidget5->item(current_pos,3);
             if(!item){
                 item = new QTableWidgetItem();
-                ui->tablewidget5->setItem(current_pos++,4,item);
+                ui->tablewidget5->setItem(current_pos++,3,item);
             }
 
             item->setText(afterdata);
