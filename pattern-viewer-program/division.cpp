@@ -385,18 +385,21 @@ void Widget::division_blockHeader(){
     ui->tablewidget4->setColumnWidth(0,350);
 
     int current_pos=0;
-    int common_r = commonbody_r;
-    int common_s = commonbody_s;
+    int cr = commonbody_r;
+    int cs = commonbody_s;
+    int br = blockbody_r;
+    int bs = blockbody_s;
+    int bp = blockbody_p;
     for(int i=0;i<33;i++){
         started = ended;
         ended += excelformat[i][4].toInt();
 
-        if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(32bit) DATA" && (common_r - 1) > 0){
-            common_r--;
+        if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(32bit) DATA" && (cr - 1) > 0){
+            cr--;
             i-=2;
         }
-        else if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(64bit) DATA" && (common_s - 1) > 0){
-            common_s--;
+        else if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(64bit) DATA" && (cs - 1) > 0){
+            cs--;
             i-=2;
         }
 
@@ -404,36 +407,8 @@ void Widget::division_blockHeader(){
 
 
 
-            if(excelformat[i][1] == "Reserved" ){
-               blockheader_startingarr = ended;
-             //  qDebug()<<ended;
-            }
-            else if(excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
-
-                QByteArray temp;
-
-                temp.append(filedata.at(started));
-
-                bool ok;
-
-                blockbody_r =  temp.toHex().toInt(&ok,16);
-
-               // qDebug()<<blockbody_r;
-            }
-            else if(excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
 
 
-                QByteArray temp;
-
-                temp.append(filedata.at(started));
-
-                bool ok;
-
-                blockbody_s =  temp.toHex().toInt(&ok,16);
-
-               // qDebug()<<blockbody_s;
-
-             }
 
             for(int j=1;j<3;j++){
                 QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j - 1);
@@ -530,7 +505,7 @@ void Widget::division_blockBody(){
 
     fileheadercnt++;
     ui->tablewidget5->setRowCount(fileheadercnt+ blockbody_r*2 + blockbody_s*2 + blockbody_p - 5);
-   // qDebug()<<fileheadercnt+ blockbody_r + blockbody_s - 2;
+    // qDebug()<<fileheadercnt+ blockbody_r + blockbody_s - 2;
     ui->tablewidget5->setColumnCount(4);
     ui->tablewidget5->setColumnWidth(3,1000);
     ui->tablewidget5->setColumnWidth(0,180);

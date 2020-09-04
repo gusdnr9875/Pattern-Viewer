@@ -82,6 +82,12 @@ private slots:
 
     void on_radioButton1_3_clicked();
 
+    void on_radioButton1_4_clicked();
+
+    void on_radioButton1_5_clicked();
+
+    void on_radioButton1_6_clicked();
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
