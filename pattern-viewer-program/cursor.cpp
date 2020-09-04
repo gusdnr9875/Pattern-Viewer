@@ -11,6 +11,9 @@ void Widget::get_r_s_p(){
     int started =0;
     int ended =0;
 
+
+    int cr,cs;
+
     for(int i=0;i<=33;i++){
 
         if(i==2)
@@ -19,7 +22,7 @@ void Widget::get_r_s_p(){
             started = ended;
             ended += excelformat[i][4].toInt();
         }
-        if(excelformat[i][0]=="COMMON BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
+        if(excelformat[i][0]=="COMMON HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
 
             QByteArray temp;
 
@@ -28,10 +31,11 @@ void Widget::get_r_s_p(){
             bool ok;
 
             commonbody_r =  temp.toHex().toInt(&ok,16);
-
+            //  qDebug()<<commonbody_r;
+            cr = commonbody_r;
             // qDebug()<<blockbody_r;
         }
-        else if(excelformat[i][0]=="COMMON BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
+        else if(excelformat[i][0]=="COMMON HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
 
 
             QByteArray temp;
@@ -41,12 +45,12 @@ void Widget::get_r_s_p(){
             bool ok;
 
             commonbody_s =  temp.toHex().toInt(&ok,16);
-
+            cs = commonbody_s;
             // qDebug()<<blockbody_s;
 
         }
 
-        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
+        else if(excelformat[i][0]=="BLOCK1 HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 32bit) : r" ){
 
 
             QByteArray temp;
@@ -61,7 +65,7 @@ void Widget::get_r_s_p(){
 
         }
 
-        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
+        else if(excelformat[i][0]=="BLOCK1 HEADER" && excelformat[i][1] == "The count of Opcode and Data Set (Data : 64bit) : s" ){
 
 
             QByteArray temp;
@@ -77,26 +81,57 @@ void Widget::get_r_s_p(){
         }
 
 
-        else if(excelformat[i][0]=="BLOCK1 BODY" && excelformat[i][1] == "Micro Pattern" ){
 
 
-            QByteArray temp;
 
-            temp.append(filedata.at(started));
+        else if(excelformat[i][0]=="BLOCK1 HEADER" && excelformat[i][1] == "Micro Pattern Count : p" ){
+
+
+            QString temp;
+
+            for(int i= ended - 1; i>=started;i--){
+                QByteArray temp2;
+                temp2.append(filedata.at(i));
+                temp += temp2.toHex();
+            }
+
+
+
+
 
             bool ok;
 
-            blockbody_p =  temp.toHex().toInt(&ok,16);
+            blockbody_p =  temp.toUInt(&ok,16);//.toHex().toInt(&ok,16);
 
-            // qDebug()<<blockbody_s;
+            // qDebug()<<blockbody_p;
 
         }
 
-    /*
-     error!! debug
-     */
+        if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (cr - 1) > 0){
+            cr--;
+            i-=2;
+
+
+        }
+        else if(excelformat[i][0]=="COMMON BODY"&&excelformat[i][1]=="Register(64bit) DATA"&& (cs - 1) > 0){
+            cs--;
+            i-=2;
+        }
+
+
+
 
     }
+    /*
+    qDebug()<<commonbody_r;
+    qDebug()<<commonbody_s;
+    qDebug()<<blockbody_r;
+    qDebug()<<blockbody_s;
+    qDebug()<<blockbody_p;
+    */
+
+
+
 }
 
 

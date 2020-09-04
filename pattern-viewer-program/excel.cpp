@@ -152,15 +152,15 @@ QString Widget::right_total(){
             cs--;
             i-=2;
         }
-        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (br -1)   > 0){
+        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (br - 1)   > 0){
             br--;
             i-=2;
         }
-        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(32bit) DATA"&& (bs -1)  > 0){
+        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(64bit) DATA"&& (bs - 1)   > 0){
             bs--;
             i-=2;
         }
-        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Micro Pattern"&& (bs -1)  > 0){
+        else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Micro Pattern"&& (bp -1)  > 0){
             bp--;
             i-=1;
         }

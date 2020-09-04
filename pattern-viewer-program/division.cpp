@@ -529,14 +529,17 @@ void Widget::division_blockBody(){
     }
 
     fileheadercnt++;
-    ui->tablewidget5->setRowCount(fileheadercnt+ blockbody_r*2 + blockbody_s*2 - 4);
+    ui->tablewidget5->setRowCount(fileheadercnt+ blockbody_r*2 + blockbody_s*2 + blockbody_p - 5);
    // qDebug()<<fileheadercnt+ blockbody_r + blockbody_s - 2;
     ui->tablewidget5->setColumnCount(4);
     ui->tablewidget5->setColumnWidth(3,1000);
     ui->tablewidget5->setColumnWidth(0,180);
 
+
     int br = blockbody_r;
     int bs = blockbody_s;
+    int bp = blockbody_p;
+
     int current_pos =0;
     started=blockheader_startingarr;
     ended= blockheader_startingarr;
@@ -619,6 +622,10 @@ void Widget::division_blockBody(){
             else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Register(64bit) DATA" && (bs - 1) > 0){
                 bs--;
                 i-=2;
+            }
+            else if(excelformat[i][0]=="BLOCK1 BODY"&&excelformat[i][1]=="Micro Pattern"&& (bp -1)  > 0){
+                bp--;
+                i-=1;
             }
 
 

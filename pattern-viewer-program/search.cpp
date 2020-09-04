@@ -108,7 +108,7 @@ void Widget::file_search_cursor(){
 
             if(cnt == cursor_point){
                 highlightCursor.mergeCharFormat(backcolorFormat);
-                qDebug()<<cursor_point;
+               // qDebug()<<cursor_point;
                 set_cursor_position(cursor_point + 1);
                 highlightCursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 0);
                 ui->textedit->setTextCursor(highlightCursor);
@@ -252,7 +252,7 @@ void Widget::file_search_cursor_right(){
 
             if(cnt == cursor_point){
                 highlightCursor.mergeCharFormat(backcolorFormat);
-                qDebug()<<cursor_point;
+              //  qDebug()<<cursor_point;
                 set_cursor_position_right(cursor_point + 1);
                 highlightCursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 0);
                 ui->textedit2->setTextCursor(highlightCursor);
