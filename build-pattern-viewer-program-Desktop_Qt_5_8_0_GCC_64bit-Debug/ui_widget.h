@@ -56,6 +56,7 @@ public:
     QTableWidget *tablewidget4;
     QWidget *tab_6;
     QTableWidget *tablewidget5;
+    QWidget *tab_7;
     QGroupBox *groupBox;
     QRadioButton *radioButton1_1;
     QRadioButton *radioButton1_2;
@@ -181,6 +182,9 @@ public:
         tablewidget5->setObjectName(QStringLiteral("tablewidget5"));
         tablewidget5->setGeometry(QRect(10, 10, 751, 681));
         tabwidget->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QStringLiteral("tab_7"));
+        tabwidget->addTab(tab_7, QString());
         groupBox = new QGroupBox(Widget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(20, 760, 401, 81));
@@ -245,7 +249,7 @@ public:
 
         retranslateUi(Widget);
 
-        tabwidget->setCurrentIndex(3);
+        tabwidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -271,6 +275,7 @@ public:
         tabwidget->setTabText(tabwidget->indexOf(tab_4), QApplication::translate("Widget", "COMMON BODY", Q_NULLPTR));
         tabwidget->setTabText(tabwidget->indexOf(tab_5), QApplication::translate("Widget", "BLOCK1 HEADER", Q_NULLPTR));
         tabwidget->setTabText(tabwidget->indexOf(tab_6), QApplication::translate("Widget", "BLOCK1 BODY", Q_NULLPTR));
+        tabwidget->setTabText(tabwidget->indexOf(tab_7), QApplication::translate("Widget", "Micro Pattern", Q_NULLPTR));
         groupBox->setTitle(QString());
         radioButton1_1->setText(QApplication::translate("Widget", "File Header", Q_NULLPTR));
         radioButton1_2->setText(QApplication::translate("Widget", "Common Header", Q_NULLPTR));

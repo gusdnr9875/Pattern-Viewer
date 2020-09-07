@@ -86,12 +86,28 @@ private slots:
 
     void on_radioButton1_5_clicked();
 
-    void on_radioButton1_6_clicked();
+
+    void on_clear_clicked();
+
+    void on_tabwidget_tabBarClicked(int index);
+
+    void on_clear2_clicked();
+
+    void on_radioButton2_1_clicked();
+
+    void on_radioButton2_2_clicked();
+
+    void on_radioButton2_3_clicked();
+
+    void on_radioButton2_4_clicked();
+
+    void on_radioButton2_5_clicked();
 
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
     static QString filename; //file name
+     QString string_arr;//file data
 
     //searching variables
     QString search_keyword;  // search keyword

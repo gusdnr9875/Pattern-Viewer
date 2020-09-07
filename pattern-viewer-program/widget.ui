@@ -259,7 +259,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>6</number>
    </property>
    <property name="tabsClosable">
     <bool>false</bool>
@@ -368,6 +368,11 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Micro Pattern</string>
+    </attribute>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox">

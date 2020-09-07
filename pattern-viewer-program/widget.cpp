@@ -13,7 +13,6 @@ Widget::Widget(QWidget *parent) :
     QByteArray arr = Widget::get_file_arr();
 
     QString temp_string_arr = arr.toHex();
-    QString string_arr;
     int cnt = 1;
     for(int i=0;i<temp_string_arr.size();i++){
         if(i%2==0 && i!=0)
@@ -45,6 +44,7 @@ Widget::Widget(QWidget *parent) :
     division_CommonBody();
     division_blockHeader();
     division_blockBody();
+
 
 
 
@@ -104,7 +104,6 @@ void Widget::on_fileSelect_clicked()
     QByteArray arr = Widget::get_file_arr();
 
     QString temp_string_arr = arr.toHex();
-    QString string_arr;
     int cnt = 1;
     for(int i=0;i<temp_string_arr.size();i++){
         if(i%2==0)
@@ -131,6 +130,39 @@ void Widget::on_fileSelect_clicked()
 
 
 }
+
+
+
+
+
+
+
+
+
+
+void Widget::on_tabwidget_tabBarClicked(int index)
+{
+    if(index == 0){
+    ui->search_button2->setEnabled(true);
+    ui->clear2->setEnabled(true);
+    ui->radioButton2_1->setEnabled(true);
+    ui->radioButton2_2->setEnabled(true);
+    ui->radioButton2_3->setEnabled(true);
+    ui->radioButton2_4->setEnabled(true);
+    ui->radioButton2_5->setEnabled(true);
+    }
+    else{
+        ui->search_button2->setEnabled(false);
+        ui->nextbutton2->setEnabled(false);
+        ui->clear2->setEnabled(false);
+        ui->radioButton2_1->setEnabled(false);
+        ui->radioButton2_2->setEnabled(false);
+        ui->radioButton2_3->setEnabled(false);
+        ui->radioButton2_4->setEnabled(false);
+        ui->radioButton2_5->setEnabled(false);
+    }
+}
+
 
 
 

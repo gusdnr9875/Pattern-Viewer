@@ -465,12 +465,7 @@ void Widget::on_radioButton1_4_clicked()
                                      tr("Sorry, the word cannot be found."));
         }
 
-
-
-
     }
-
-
 
 }
 
@@ -538,6 +533,62 @@ void Widget::on_radioButton1_5_clicked()
         }
 
 
+    }
+
+
+}
+
+
+void Widget::on_radioButton2_1_clicked()
+{
+    QString keyword;
+    for(int i=0;i<=33;i++){
+        if(excelformat[i][0] == ui->radioButton2_1->text()){
+            keyword = excelformat[i][1];
+            break;
+        }
+    }
+    qDebug()<< keyword;
+
+    QTextDocument *document = ui->textedit2 ->document();
+
+
+    bool found = false;
+
+    // undo previous change (if any)
+    document->undo();
+
+
+    if(keyword.isEmpty()){
+        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
+        ui->nextbutton2->setEnabled(false);
+    }
+
+
+    else{
+        QTextCursor highlightCursor(document);
+        QTextCursor cursor(document);
+
+        cursor.beginEditBlock();
+
+        QTextCharFormat plainFormat(highlightCursor.charFormat());
+        QTextCharFormat colorFormat = plainFormat;
+
+        // colorFormat.setForeground(Qt::red);
+        //colorFormat.setBackground(Qt::black);
+
+        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+             ui->textedit2->setTextCursor(highlightCursor);
+             break;
+
+        }
+
+        cursor.endEditBlock();
+
+
+
 
 
     }
@@ -546,4 +597,285 @@ void Widget::on_radioButton1_5_clicked()
 
 }
 
+void Widget::on_radioButton2_2_clicked()
+{
+    QString keyword;
+    for(int i=0;i<=33;i++){
+        if(excelformat[i][0] == "COMMON HEADER"){
+            keyword = excelformat[i][1];
+            break;
+        }
+    }
+    qDebug()<< keyword;
 
+    QTextDocument *document = ui->textedit2 ->document();
+
+
+    bool found = false;
+
+    // undo previous change (if any)
+    document->undo();
+
+
+    if(keyword.isEmpty()){
+        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
+        ui->nextbutton2->setEnabled(false);
+    }
+
+
+    else{
+        QTextCursor highlightCursor(document);
+        QTextCursor cursor(document);
+
+        cursor.beginEditBlock();
+
+        QTextCharFormat plainFormat(highlightCursor.charFormat());
+        QTextCharFormat colorFormat = plainFormat;
+
+        // colorFormat.setForeground(Qt::red);
+        //colorFormat.setBackground(Qt::black);
+
+        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+             ui->textedit2->setTextCursor(highlightCursor);
+             break;
+
+        }
+
+        cursor.endEditBlock();
+
+
+
+
+
+    }
+
+
+}
+
+
+void Widget::on_radioButton2_3_clicked()
+{
+    QString keyword;
+    for(int i=0;i<=33;i++){
+        if(excelformat[i][0] == "COMMON BODY"){
+            keyword = excelformat[i][1];
+            break;
+        }
+    }
+  //  qDebug()<< keyword;
+
+    QTextDocument *document = ui->textedit2 ->document();
+
+
+    bool found = false;
+
+    // undo previous change (if any)
+    document->undo();
+
+
+    if(keyword.isEmpty()){
+        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
+        ui->nextbutton2->setEnabled(false);
+    }
+
+
+    else{
+        QTextCursor highlightCursor(document);
+        QTextCursor cursor(document);
+
+        cursor.beginEditBlock();
+
+        QTextCharFormat plainFormat(highlightCursor.charFormat());
+        QTextCharFormat colorFormat = plainFormat;
+
+        // colorFormat.setForeground(Qt::red);
+        //colorFormat.setBackground(Qt::black);
+
+        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+             ui->textedit2->setTextCursor(highlightCursor);
+             break;
+
+        }
+
+        cursor.endEditBlock();
+
+
+
+
+
+    }
+
+
+}
+
+void Widget::on_radioButton2_4_clicked()
+{
+    QString keyword;
+    for(int i=0;i<=33;i++){
+        if(excelformat[i][0] == "BLOCK1 HEADER"){
+            keyword = excelformat[i][1];
+            break;
+        }
+    }
+    //qDebug()<< keyword;
+
+    QTextDocument *document = ui->textedit2 ->document();
+
+
+    bool found = false;
+
+    // undo previous change (if any)
+    document->undo();
+
+
+    if(keyword.isEmpty()){
+        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
+        ui->nextbutton2->setEnabled(false);
+    }
+
+
+    else{
+        QTextCursor highlightCursor(document);
+        QTextCursor cursor(document);
+
+        cursor.beginEditBlock();
+
+        QTextCharFormat plainFormat(highlightCursor.charFormat());
+        QTextCharFormat colorFormat = plainFormat;
+
+        // colorFormat.setForeground(Qt::red);
+        //colorFormat.setBackground(Qt::black);
+
+        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+             ui->textedit2->setTextCursor(highlightCursor);
+             break;
+
+        }
+
+        cursor.endEditBlock();
+
+        QByteArray a;
+
+
+    }
+}
+
+void Widget::on_radioButton2_5_clicked()
+{
+    QString keyword;
+    for(int i=0;i<=33;i++){
+        if(excelformat[i][0] == "BLOCK1 BODY"){
+            keyword = excelformat[i][1];
+            break;
+        }
+    }
+   // qDebug()<< keyword;
+
+    QTextDocument *document = ui->textedit2 ->document();
+
+
+    bool found = false;
+
+    // undo previous change (if any)
+    document->undo();
+
+
+    if(keyword.isEmpty()){
+        QMessageBox::information(this, tr("Empty Search Feild"), tr("The search field is empty. "));
+        ui->nextbutton2->setEnabled(false);
+    }
+
+
+    else{
+        QTextCursor highlightCursor(document);
+        QTextCursor cursor(document);
+
+        cursor.beginEditBlock();
+
+        QTextCharFormat plainFormat(highlightCursor.charFormat());
+        QTextCharFormat colorFormat = plainFormat;
+
+        // colorFormat.setForeground(Qt::red);
+        //colorFormat.setBackground(Qt::black);
+
+        while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
+            highlightCursor = document->find(keyword, highlightCursor,
+                                             QTextDocument::FindWholeWords);
+             ui->textedit2->setTextCursor(highlightCursor);
+             break;
+
+        }
+
+        cursor.endEditBlock();
+
+
+    }
+}
+
+
+void Widget::on_clear_clicked()
+{
+    ui->radioButton1_1->setChecked(false);
+
+    ui->radioButton1_2->setChecked(false);
+
+    ui->radioButton1_3->setChecked(false);
+
+    ui->radioButton1_4->setChecked(false);
+
+    ui->radioButton1_5->setChecked(false);
+
+    ui->nextbutton1->setEnabled(false);
+
+    ui->keyword1->setText("");
+
+
+    ui->textedit->setTextColor(Qt::black);
+
+    ui->textedit->setTextBackgroundColor(Qt::white);
+
+    ui->textedit->setText(string_arr);
+
+    //ui->textedit->setCursor(0);
+
+   // ui->filename->setText(get_filename());
+
+
+}
+
+
+
+void Widget::on_clear2_clicked()
+{
+    ui->radioButton2_1->setChecked(false);
+
+    ui->radioButton2_2->setChecked(false);
+
+    ui->radioButton2_3->setChecked(false);
+
+    ui->radioButton2_4->setChecked(false);
+
+    ui->radioButton2_5->setChecked(false);
+
+    ui->nextbutton2->setEnabled(false);
+
+    ui->keyword2->setText("");
+
+
+    ui->textedit2->setTextColor(Qt::black);
+
+    ui->textedit2->setTextBackgroundColor(Qt::white);
+
+    ui->textedit2->setText(right_total());
+
+    //ui->textedit->setCursor(0);
+
+    //ui->filename->setText(get_filename());
+
+}
