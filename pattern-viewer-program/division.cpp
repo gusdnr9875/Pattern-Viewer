@@ -388,8 +388,8 @@ void Widget::division_blockHeader(){
     int cr = commonbody_r;
     int cs = commonbody_s;
     //int br = blockbody_r;
-   // int bs = blockbody_s;
-   // int bp = blockbody_p;
+    // int bs = blockbody_s;
+    // int bp = blockbody_p;
     for(int i=0;i<33;i++){
         started = ended;
         ended += excelformat[i][4].toInt();
@@ -404,11 +404,6 @@ void Widget::division_blockHeader(){
         }
 
         if(excelformat[i][0] == "BLOCK1 HEADER"){
-
-
-
-
-
 
             for(int j=1;j<3;j++){
                 QTableWidgetItem* item = ui->tablewidget4->item(current_pos,j - 1);
@@ -516,8 +511,8 @@ void Widget::division_blockBody(){
     int bp = blockbody_p;
 
     int current_pos =0;
-    started=blockheader_startingarr;
-    ended= blockheader_startingarr;
+    started=blockbody_startingarr;
+    ended= blockbody_startingarr;
     for(int i=0;i<=33;i++){
 
         if(excelformat[i][0] == "BLOCK1 BODY"){
@@ -616,25 +611,60 @@ void Widget::division_blockBody(){
 }
 
 
-/*
-bool ok;
-QString hexString = "0x03";
-qDebug() << "BINARY 1: " << QString::number(hexString.toLongLong(&ok, 16),2);
-qDebug() << "BINARY 2: " << QString("%1").arg(hexString.toULongLong(&ok, 16), 5, 2, QChar('0'));
-
-위에가 원본
-아래가 32bit binary string으로 바꾸는 코드
-binaryString += QString("%1").arg(binary_4byte_String.toULongLong(&ok, 16), 32, 2, QChar('0'));
-*/
-
 
 void Widget::print_MicroPattern(){
     QString micro;
-    ui->textedit3->append("micro");
+    QByteArray filedata = get_file_arr(); //  get file data
 
+    int br = blockbody_r;
+    int bs = blockbody_s;
+    int bp = blockbody_p;
 
+    int started = blockbody_startingarr;
 
+    while(br > 0){
+        br--;
+        started += 8;
 
+    }
+    while(bs > 0){
+        bs--;
+        started += 12;
 
+    }
+    // start is micro pattern starting arr
+    int line =1;
+    for(int i=0;i<bp;i++){
+
+        micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
+        for(int j = 0;j <116;j++,started++){
+
+            /*
+            bool ok;
+            QString hexString = "0x03";
+            qDebug() << "BINARY 1: " << QString::number(hexString.toLongLong(&ok, 16),2);
+            qDebug() << "BINARY 2: " << QString("%1").arg(hexString.toULongLong(&ok, 16), 5, 2, QChar('0'));
+
+            위에가 원본
+            아래가 32bit binary string으로 바꾸는 코드
+            binaryString += QString("%1").arg(binary_4byte_String.toULongLong(&ok, 16), 32, 2, QChar('0'));
+            */
+
+            QByteArray temp;
+            temp.append(filedata.at(started));
+
+            //filedata.replace()
+            if(line==2){
+                bool ok;
+                qDebug()<< temp.toHex().toInt(&ok,16);
+            }
+
+            micro.append(temp.toHex());
+
+        }
+        micro.append("\n\n");
+    }
+
+ ui->textedit3->append(micro);
 
 }

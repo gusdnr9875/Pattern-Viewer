@@ -101,8 +101,6 @@ QString Widget::right_total(){
         else{
             started = ended;
             ended += excelformat[i][4].toInt();
-
-
         }
 
         // qDebug()<< afterdata;
