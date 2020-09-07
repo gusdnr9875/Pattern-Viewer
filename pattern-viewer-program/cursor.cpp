@@ -726,7 +726,7 @@ void Widget::on_radioButton2_4_clicked()
     QTextDocument *document = ui->textedit2 ->document();
 
 
-    bool found = false;
+
 
     // undo previous change (if any)
     document->undo();
@@ -780,7 +780,7 @@ void Widget::on_radioButton2_5_clicked()
     QTextDocument *document = ui->textedit2 ->document();
 
 
-    bool found = false;
+
 
     // undo previous change (if any)
     document->undo();

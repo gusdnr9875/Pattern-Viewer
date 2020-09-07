@@ -57,6 +57,7 @@ public:
     QWidget *tab_6;
     QTableWidget *tablewidget5;
     QWidget *tab_7;
+    QTextEdit *textedit3;
     QGroupBox *groupBox;
     QRadioButton *radioButton1_1;
     QRadioButton *radioButton1_2;
@@ -184,6 +185,9 @@ public:
         tabwidget->addTab(tab_6, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
+        textedit3 = new QTextEdit(tab_7);
+        textedit3->setObjectName(QStringLiteral("textedit3"));
+        textedit3->setGeometry(QRect(10, 10, 751, 681));
         tabwidget->addTab(tab_7, QString());
         groupBox = new QGroupBox(Widget);
         groupBox->setObjectName(QStringLiteral("groupBox"));

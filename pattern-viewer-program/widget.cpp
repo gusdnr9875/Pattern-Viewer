@@ -25,6 +25,7 @@ Widget::Widget(QWidget *parent) :
     }
 
 
+
     excel_read();
     get_r_s_p();
     set_startingarr();
@@ -34,10 +35,7 @@ Widget::Widget(QWidget *parent) :
     ui->textedit->setFontPointSize(15);
     ui->textedit->setText(string_arr);
 
-
     ui->textedit2->setText(right_total());
-
-
 
     division_FileHeader();
     division_CommonHeader();
@@ -45,8 +43,7 @@ Widget::Widget(QWidget *parent) :
     division_blockHeader();
     division_blockBody();
 
-
-
+    print_MicroPattern();
 
 }
 

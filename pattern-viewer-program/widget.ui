@@ -373,6 +373,16 @@
     <attribute name="title">
      <string>Micro Pattern</string>
     </attribute>
+    <widget class="QTextEdit" name="textedit3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>751</width>
+       <height>681</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox">

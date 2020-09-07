@@ -153,9 +153,11 @@ private:
     void division_blockHeader();
     void division_blockBody();
 
-    //radion button cursor
+    //radio button cursor
     void set_startingarr();
 
+    //micro parrtern print
+    void print_MicroPattern();
 
 
 };

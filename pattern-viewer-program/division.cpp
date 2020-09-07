@@ -387,9 +387,9 @@ void Widget::division_blockHeader(){
     int current_pos=0;
     int cr = commonbody_r;
     int cs = commonbody_s;
-    int br = blockbody_r;
-    int bs = blockbody_s;
-    int bp = blockbody_p;
+    //int br = blockbody_r;
+   // int bs = blockbody_s;
+   // int bp = blockbody_p;
     for(int i=0;i<33;i++){
         started = ended;
         ended += excelformat[i][4].toInt();
@@ -616,5 +616,25 @@ void Widget::division_blockBody(){
 }
 
 
+/*
+bool ok;
+QString hexString = "0x03";
+qDebug() << "BINARY 1: " << QString::number(hexString.toLongLong(&ok, 16),2);
+qDebug() << "BINARY 2: " << QString("%1").arg(hexString.toULongLong(&ok, 16), 5, 2, QChar('0'));
+
+위에가 원본
+아래가 32bit binary string으로 바꾸는 코드
+binaryString += QString("%1").arg(binary_4byte_String.toULongLong(&ok, 16), 32, 2, QChar('0'));
+*/
 
 
+void Widget::print_MicroPattern(){
+    QString micro;
+    ui->textedit3->append("micro");
+
+
+
+
+
+
+}
