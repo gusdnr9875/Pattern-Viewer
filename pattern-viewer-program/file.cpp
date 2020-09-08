@@ -46,4 +46,12 @@ void file::file_read(){
 
 }
 
+void file::file_write(){
+
+
+
+
+
+}
+
 

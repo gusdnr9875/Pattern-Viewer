@@ -63,6 +63,7 @@ void Widget::file_read(){
     file* f = new file();
 
     f->file_read();
+
 }
 
 void Widget::on_search_button1_clicked()
@@ -172,3 +173,62 @@ void Widget::on_tabwidget_tabBarClicked(int index)
 
 
 
+
+void Widget::on_downloadLine_clicked()
+{
+
+
+    QString ApplicationPath = QApplication::applicationDirPath();
+    QFile File("./test.txt");
+
+
+
+
+    //파일
+    if(!File.open(QIODevice::WriteOnly)) // 텍스트로 파일 열기
+    {
+         if(!File.exists()) // 파일이 존재하지 않으면...
+        {
+             qDebug()<<"file is not exist";// 파일이 존재하지 않으면...여기에 동작 적용
+             return;
+        }
+        else
+        {
+            qDebug()<<"file is not open";// 파일을 열수 없거나 파일 손상 등 여러 요인작용...
+        }
+    }
+   // QDataStream OpenFile(&File);
+   // QString ConfigText;
+    File.write(string_arr.toUtf8());
+
+    File.close(); // 파일닫기
+
+}
+
+void Widget::on_downloadFormat_clicked()
+{
+    QString ApplicationPath = QApplication::applicationDirPath();
+    QFile File("./test2.txt");
+
+
+
+
+    //파일
+    if(!File.open(QIODevice::WriteOnly)) // 텍스트로 파일 열기
+    {
+         if(!File.exists()) // 파일이 존재하지 않으면...
+        {
+             qDebug()<<"file is not exist";// 파일이 존재하지 않으면...여기에 동작 적용
+             return;
+        }
+        else
+        {
+            qDebug()<<"file is not open";// 파일을 열수 없거나 파일 손상 등 여러 요인작용...
+        }
+    }
+   // QDataStream OpenFile(&File);
+   // QString ConfigText;
+    File.write(right_total().toUtf8());
+
+    File.close(); // 파일닫기
+}

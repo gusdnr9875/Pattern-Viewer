@@ -103,6 +103,10 @@ private slots:
 
     void on_radioButton2_5_clicked();
 
+    void on_downloadLine_clicked();
+
+    void on_downloadFormat_clicked();
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data

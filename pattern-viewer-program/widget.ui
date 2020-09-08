@@ -259,7 +259,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>6</number>
+    <number>0</number>
    </property>
    <property name="tabsClosable">
     <bool>false</bool>
@@ -567,6 +567,48 @@
     <string>Clear</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="downloadLine">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>750</y>
+     <width>84</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Download 
+ line.txt</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="downloadFormat_excel">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>810</y>
+     <width>84</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Download 
+ format.xlsx</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="downloadFormat">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>750</y>
+     <width>84</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Download 
+ format.txt</string>
+   </property>
+  </widget>
   <zorder>textedit</zorder>
   <zorder>label</zorder>
   <zorder>label_1</zorder>
@@ -586,6 +628,9 @@
   <zorder>groupBox</zorder>
   <zorder>keyword1</zorder>
   <zorder>keyword2</zorder>
+  <zorder>downloadLine</zorder>
+  <zorder>downloadFormat_excel</zorder>
+  <zorder>downloadFormat</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -72,6 +72,9 @@ public:
     QRadioButton *radioButton2_5;
     QPushButton *clear;
     QPushButton *clear2;
+    QPushButton *downloadLine;
+    QPushButton *downloadFormat_excel;
+    QPushButton *downloadFormat;
 
     void setupUi(QWidget *Widget)
     {
@@ -231,6 +234,15 @@ public:
         clear2 = new QPushButton(Widget);
         clear2->setObjectName(QStringLiteral("clear2"));
         clear2->setGeometry(QRect(1140, 830, 84, 28));
+        downloadLine = new QPushButton(Widget);
+        downloadLine->setObjectName(QStringLiteral("downloadLine"));
+        downloadLine->setGeometry(QRect(570, 750, 84, 51));
+        downloadFormat_excel = new QPushButton(Widget);
+        downloadFormat_excel->setObjectName(QStringLiteral("downloadFormat_excel"));
+        downloadFormat_excel->setGeometry(QRect(1240, 810, 84, 51));
+        downloadFormat = new QPushButton(Widget);
+        downloadFormat->setObjectName(QStringLiteral("downloadFormat"));
+        downloadFormat->setGeometry(QRect(1240, 750, 84, 51));
         textedit->raise();
         label->raise();
         label_1->raise();
@@ -250,10 +262,13 @@ public:
         groupBox->raise();
         keyword1->raise();
         keyword2->raise();
+        downloadLine->raise();
+        downloadFormat_excel->raise();
+        downloadFormat->raise();
 
         retranslateUi(Widget);
 
-        tabwidget->setCurrentIndex(6);
+        tabwidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -294,6 +309,12 @@ public:
         radioButton2_5->setText(QApplication::translate("Widget", "Block Body", Q_NULLPTR));
         clear->setText(QApplication::translate("Widget", "Clear", Q_NULLPTR));
         clear2->setText(QApplication::translate("Widget", "Clear", Q_NULLPTR));
+        downloadLine->setText(QApplication::translate("Widget", "Download \n"
+" line.txt", Q_NULLPTR));
+        downloadFormat_excel->setText(QApplication::translate("Widget", "Download \n"
+" format.xlsx", Q_NULLPTR));
+        downloadFormat->setText(QApplication::translate("Widget", "Download \n"
+" format.txt", Q_NULLPTR));
     } // retranslateUi
 
 };

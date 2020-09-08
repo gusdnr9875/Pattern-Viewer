@@ -11,6 +11,7 @@ public:
     ~file();
 
     void file_read(); // open and read file data
+    void file_write();
 
 signals:
 

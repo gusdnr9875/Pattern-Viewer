@@ -621,7 +621,7 @@ void Widget::print_MicroPattern(){
     int bp = blockbody_p;
 
     int started = blockbody_startingarr;
-
+    //qDebug()<< started;
     while(br > 0){
         br--;
         started += 8;
@@ -632,39 +632,72 @@ void Widget::print_MicroPattern(){
         started += 12;
 
     }
+    //qDebug()<< started;
     // start is micro pattern starting arr
+
+    /*
+    QString hexString;
+
+    for(int i=0;i<bp;i++)
+        for(int j=0;j<116;j++,started++){
+            QByteArray temp;
+            temp.append(filedata.at(started));
+
+            hexString.append(temp.toHex());
+        }
+
+
+
+    const int bytesize =4;
+    bool ok;
+    int line =1;
+    int current = 0;
+    // qDebug() <<hexString.size();
+   //  qDebug() << hexString;
+    qDebug()<<hexString[0]<<hexString[1]<<hexString[2];
+    for(int i=0;i<bp;i++){ //167(16)
+        micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
+        for(int k = 0; k<29; k++){ //row 29
+            QString byteString;
+            QString binaryString;
+
+            for(int j=0;j<8;j++) // 4
+                byteString += hexString[current++];
+            if(i==0 && k==0)
+                qDebug()<<byteString;
+
+            binaryString += QString("%1").arg(byteString.toULongLong(&ok,16),32,2,QChar('0'));
+            micro.append(binaryString + "\n");
+        }
+        micro.append("\n");
+    }
+    qDebug()<<commonbody_r;
+    qDebug()<<commonbody_s;
+    qDebug()<<blockbody_r;
+    qDebug()<<blockbody_s;
+*/
+
+
     int line =1;
     for(int i=0;i<bp;i++){
 
         micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
-        for(int j = 0;j <116;j++,started++){
-
-            /*
-            bool ok;
-            QString hexString = "0x03";
-            qDebug() << "BINARY 1: " << QString::number(hexString.toLongLong(&ok, 16),2);
-            qDebug() << "BINARY 2: " << QString("%1").arg(hexString.toULongLong(&ok, 16), 5, 2, QChar('0'));
-
-            위에가 원본
-            아래가 32bit binary string으로 바꾸는 코드
-            binaryString += QString("%1").arg(binary_4byte_String.toULongLong(&ok, 16), 32, 2, QChar('0'));
-            */
+        for(int j = 0;j <116;j++,started++){//started++
 
             QByteArray temp;
             temp.append(filedata.at(started));
 
-            //filedata.replace()
-            if(line==2){
-                bool ok;
-                qDebug()<< temp.toHex().toInt(&ok,16);
+            QString hexString = temp.toHex();
+            bool ok;
+            if(line ==2){
+                //qDebug() << QString("%1").arg(hexString.toULongLong(&ok, 16), 32, 2, QChar('0'));
             }
 
-            micro.append(temp.toHex());
 
         }
         micro.append("\n\n");
     }
 
- ui->textedit3->append(micro);
+    ui->textedit3->append(micro);
 
 }
