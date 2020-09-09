@@ -571,7 +571,7 @@
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>750</y>
+     <y>780</y>
      <width>84</width>
      <height>51</height>
     </rect>
@@ -581,25 +581,11 @@
  line.txt</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="downloadFormat_excel">
-   <property name="geometry">
-    <rect>
-     <x>1240</x>
-     <y>810</y>
-     <width>84</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Download 
- format.xlsx</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="downloadFormat">
    <property name="geometry">
     <rect>
      <x>1240</x>
-     <y>750</y>
+     <y>780</y>
      <width>84</width>
      <height>51</height>
     </rect>
@@ -629,7 +615,6 @@
   <zorder>keyword1</zorder>
   <zorder>keyword2</zorder>
   <zorder>downloadLine</zorder>
-  <zorder>downloadFormat_excel</zorder>
   <zorder>downloadFormat</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

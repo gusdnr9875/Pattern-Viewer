@@ -104,7 +104,7 @@ void Widget::on_fileSelect_clicked()
     QString temp_string_arr = arr.toHex();
     int cnt = 1;
     for(int i=0;i<temp_string_arr.size();i++){
-        if(i%2==0)
+        if(i%2==0 && i!=0)
             string_arr.append(" ");
         if(i%32==0){
             string_arr.append("\n line "+QString::number(cnt)+":  ");
@@ -115,14 +115,30 @@ void Widget::on_fileSelect_clicked()
 
 
 
+    excel_read();
+    get_r_s_p();
+    set_startingarr();
+
+
+    ui->filename->setText(get_filename());
+    ui->textedit->setFontPointSize(15);
+    ui->textedit->setText(string_arr);
+
+    ui->textedit2->setText(right_total());
+
+    division_FileHeader();
+    division_CommonHeader();
+    division_CommonBody();
+    division_blockHeader();
+    division_blockBody();
+
+    print_MicroPattern();
+
     ui->textedit->setTextColor(Qt::black);
     ui->textedit2->setTextColor(Qt::black);
     ui->textedit->setTextBackgroundColor(Qt::white);
     ui->textedit2->setTextBackgroundColor(Qt::white);
-    ui->filename->setText(get_filename());
 
-    ui->textedit->setText(string_arr);
-    ui->textedit2->setText(right_total());
 
 
 
@@ -179,7 +195,7 @@ void Widget::on_downloadLine_clicked()
 
 
     QString ApplicationPath = QApplication::applicationDirPath();
-    QFile File("./test.txt");
+    QFile File("./line.txt");
 
 
 
@@ -203,12 +219,16 @@ void Widget::on_downloadLine_clicked()
 
     File.close(); // 파일닫기
 
+    QMessageBox msgBox;
+    msgBox.setText("The document has been modified.");
+    msgBox.exec();
+
 }
 
 void Widget::on_downloadFormat_clicked()
 {
     QString ApplicationPath = QApplication::applicationDirPath();
-    QFile File("./test2.txt");
+    QFile File("./format.txt");
 
 
 
@@ -231,4 +251,10 @@ void Widget::on_downloadFormat_clicked()
     File.write(right_total().toUtf8());
 
     File.close(); // 파일닫기
+
+    QMessageBox msgBox;
+    msgBox.setText("The document has been modified.");
+    msgBox.exec();
+
 }
+

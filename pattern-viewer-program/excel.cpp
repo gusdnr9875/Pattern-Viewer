@@ -6,7 +6,7 @@
 //QString excelformat[100][10]; //divisiton (4,2)~
 
 void Widget::excel_read(){
-    Document xlsxR("/home/hyunwook/pattern-viwer/Pattern-Viewer/configuration.xlsx");
+    Document xlsxR("./configuration.xlsx");
     if (xlsxR.load()) // load excel file
     {
         //Division Item Type Size Size(Byte) (2,0) ~ (32,4)
@@ -164,14 +164,6 @@ QString Widget::right_total(){
         }
 
     }
-    /*
-    qDebug()<<common_r;
-    qDebug()<<common_s;
-    qDebug()<<block_r;
-    qDebug()<<block_s;
-    */
-    //qDebug()<< afterdata;
-
 
 
 

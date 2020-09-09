@@ -56,6 +56,8 @@ public:
     QTableWidget *tablewidget4;
     QWidget *tab_6;
     QTableWidget *tablewidget5;
+    QWidget *tab_7;
+    QTextEdit *textedit3;
     QGroupBox *groupBox;
     QRadioButton *radioButton1_1;
     QRadioButton *radioButton1_2;
@@ -70,6 +72,8 @@ public:
     QRadioButton *radioButton2_5;
     QPushButton *clear;
     QPushButton *clear2;
+    QPushButton *downloadLine;
+    QPushButton *downloadFormat;
 
     void setupUi(QWidget *Widget)
     {
@@ -166,6 +170,8 @@ public:
         tablewidget3 = new QTableWidget(tab_4);
         tablewidget3->setObjectName(QStringLiteral("tablewidget3"));
         tablewidget3->setGeometry(QRect(10, 10, 751, 681));
+        tablewidget3->setMouseTracking(false);
+        tablewidget3->setFocusPolicy(Qt::StrongFocus);
         tabwidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
@@ -179,6 +185,12 @@ public:
         tablewidget5->setObjectName(QStringLiteral("tablewidget5"));
         tablewidget5->setGeometry(QRect(10, 10, 751, 681));
         tabwidget->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QStringLiteral("tab_7"));
+        textedit3 = new QTextEdit(tab_7);
+        textedit3->setObjectName(QStringLiteral("textedit3"));
+        textedit3->setGeometry(QRect(10, 10, 751, 681));
+        tabwidget->addTab(tab_7, QString());
         groupBox = new QGroupBox(Widget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(20, 760, 401, 81));
@@ -221,6 +233,12 @@ public:
         clear2 = new QPushButton(Widget);
         clear2->setObjectName(QStringLiteral("clear2"));
         clear2->setGeometry(QRect(1140, 830, 84, 28));
+        downloadLine = new QPushButton(Widget);
+        downloadLine->setObjectName(QStringLiteral("downloadLine"));
+        downloadLine->setGeometry(QRect(570, 780, 84, 51));
+        downloadFormat = new QPushButton(Widget);
+        downloadFormat->setObjectName(QStringLiteral("downloadFormat"));
+        downloadFormat->setGeometry(QRect(1240, 780, 84, 51));
         textedit->raise();
         label->raise();
         label_1->raise();
@@ -240,10 +258,12 @@ public:
         groupBox->raise();
         keyword1->raise();
         keyword2->raise();
+        downloadLine->raise();
+        downloadFormat->raise();
 
         retranslateUi(Widget);
 
-        tabwidget->setCurrentIndex(5);
+        tabwidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -269,6 +289,7 @@ public:
         tabwidget->setTabText(tabwidget->indexOf(tab_4), QApplication::translate("Widget", "COMMON BODY", Q_NULLPTR));
         tabwidget->setTabText(tabwidget->indexOf(tab_5), QApplication::translate("Widget", "BLOCK1 HEADER", Q_NULLPTR));
         tabwidget->setTabText(tabwidget->indexOf(tab_6), QApplication::translate("Widget", "BLOCK1 BODY", Q_NULLPTR));
+        tabwidget->setTabText(tabwidget->indexOf(tab_7), QApplication::translate("Widget", "Micro Pattern", Q_NULLPTR));
         groupBox->setTitle(QString());
         radioButton1_1->setText(QApplication::translate("Widget", "File Header", Q_NULLPTR));
         radioButton1_2->setText(QApplication::translate("Widget", "Common Header", Q_NULLPTR));
@@ -283,6 +304,10 @@ public:
         radioButton2_5->setText(QApplication::translate("Widget", "Block Body", Q_NULLPTR));
         clear->setText(QApplication::translate("Widget", "Clear", Q_NULLPTR));
         clear2->setText(QApplication::translate("Widget", "Clear", Q_NULLPTR));
+        downloadLine->setText(QApplication::translate("Widget", "Download \n"
+" line.txt", Q_NULLPTR));
+        downloadFormat->setText(QApplication::translate("Widget", "Download \n"
+" format.txt", Q_NULLPTR));
     } // retranslateUi
 
 };

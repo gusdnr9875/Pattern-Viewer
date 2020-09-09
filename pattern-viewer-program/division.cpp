@@ -632,6 +632,32 @@ void Widget::print_MicroPattern(){
         started += 12;
 
     }
+
+    int line =1;
+    for(int i=0;i<bp;i++){
+
+        micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
+        for(int j = 0;j <116;j++,started++){//started++
+            QByteArray temp;
+            temp.append(filedata.at(started));
+            QString hexString = temp.toHex();
+            bool ok;
+            if(line ==2){
+                //qDebug() << QString("%1").arg(hexString.toULongLong(&ok, 16), 32, 2, QChar('0'));
+            }
+
+
+        }
+        micro.append("\n\n");
+    }
+
+    /*
+     1. 116바이트씩 나누어서 큐 바이트에 거꾸로 저장
+     2. 2바이트를 8비트로 변환
+     3. 총 8바이트가 한줄로 변환되는 형태
+     4.
+     5.
+    */
     //qDebug()<< started;
     // start is micro pattern starting arr
 
@@ -678,25 +704,7 @@ void Widget::print_MicroPattern(){
 */
 
 
-    int line =1;
-    for(int i=0;i<bp;i++){
 
-        micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
-        for(int j = 0;j <116;j++,started++){//started++
-
-            QByteArray temp;
-            temp.append(filedata.at(started));
-
-            QString hexString = temp.toHex();
-            bool ok;
-            if(line ==2){
-                //qDebug() << QString("%1").arg(hexString.toULongLong(&ok, 16), 32, 2, QChar('0'));
-            }
-
-
-        }
-        micro.append("\n\n");
-    }
 
     ui->textedit3->append(micro);
 

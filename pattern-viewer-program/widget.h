@@ -107,6 +107,8 @@ private slots:
 
     void on_downloadFormat_clicked();
 
+
+
 private:
     Ui::Widget *ui;
     static QByteArray file_arr; //file data
