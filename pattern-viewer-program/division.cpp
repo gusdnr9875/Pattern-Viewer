@@ -635,51 +635,49 @@ void Widget::print_MicroPattern(){
 
     int line =1;
     for(int i=0;i<bp;i++){
-
-        micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
+        QString binaryString;
+        QString byteString;
+        micro.append("Micro Pattern num: "+QString::number(line++)+"\n");
+        int line2 =1;
         for(int j = 0;j <116;j++,started++){//started++
             QByteArray temp;
             temp.append(filedata.at(started));
             QString hexString = temp.toHex();
-            bool ok;
-            if(line ==2){
-                //qDebug() << QString("%1").arg(hexString.toULongLong(&ok, 16), 32, 2, QChar('0'));
+            //micro.append(hexString + " ");
+            byteString += temp.toHex();
+
+
+            if(j!=0 && (j + 1)%4 == 0){
+                micro.append("line" + QString::number(line2++)+ ": ");
+
+
+                bool ok;
+
+                binaryString += QString("%1").arg(byteString.toULongLong(&ok,16),32,2,QChar('0'));
+                for(int i=0;i<binaryString.size();i++)
+                    micro.append(binaryString[i] + " ");
+                micro.append("\n");
+
+                binaryString.clear();
+                byteString.clear();
             }
+
+
 
 
         }
         micro.append("\n\n");
     }
 
-    /*
+/*
      1. 116바이트씩 나누어서 큐 바이트에 거꾸로 저장
      2. 2바이트를 8비트로 변환
-     3. 총 8바이트가 한줄로 변환되는 형태
-     4.
-     5.
-    */
-    //qDebug()<< started;
-    // start is micro pattern starting arr
-
-    /*
-    QString hexString;
-
-    for(int i=0;i<bp;i++)
-        for(int j=0;j<116;j++,started++){
-            QByteArray temp;
-            temp.append(filedata.at(started));
-
-            hexString.append(temp.toHex());
-        }
-
-
-
+     3. 총 8바이트가 한줄로 변환되는 형태      
     const int bytesize =4;
     bool ok;
     int line =1;
     int current = 0;
-    // qDebug() <<hexString.size();
-   //  qDebug() << hexString;
+
     qDebug()<<hexString[0]<<hexString[1]<<hexString[2];
     for(int i=0;i<bp;i++){ //167(16)
         micro.append("                                                                         Micro Pattern num: "+QString::number(line++)+"\n");
@@ -703,8 +701,7 @@ void Widget::print_MicroPattern(){
     qDebug()<<blockbody_s;
 */
 
-
-
+    ui->textedit3->setFontPointSize(17);
 
     ui->textedit3->append(micro);
 
