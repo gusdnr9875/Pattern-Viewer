@@ -637,25 +637,32 @@ void Widget::print_MicroPattern(){
     for(int i=0;i<bp;i++){
         QString binaryString;
         QString byteString;
-        micro.append("Micro Pattern num: "+QString::number(line++)+"\n");
+        micro.append("Micro Pattern num: "+QString::number(line++));
+
+        micro.append("\n");
         int line2 =1;
         for(int j = 0;j <116;j++,started++){//started++
             QByteArray temp;
             temp.append(filedata.at(started));
             QString hexString = temp.toHex();
-            //micro.append(hexString + " ");
+            //micro.append(hexString + "  ");
             byteString += temp.toHex();
 
 
             if(j!=0 && (j + 1)%4 == 0){
-                micro.append("line" + QString::number(line2++)+ ": ");
-
-
+                micro.append("line");
+                if(line2 < 10)
+                    micro.append("  ");
+                micro.append( QString::number(line2++)+ ": " );
                 bool ok;
 
                 binaryString += QString("%1").arg(byteString.toULongLong(&ok,16),32,2,QChar('0'));
-                for(int i=0;i<binaryString.size();i++)
+                for(int i=0;i<binaryString.size();i++){
                     micro.append(binaryString[i] + " ");
+                    if(i!=0 && i%8==0){
+                        micro.append(" ");
+                    }
+                }
                 micro.append("\n");
 
                 binaryString.clear();

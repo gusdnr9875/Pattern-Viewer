@@ -128,6 +128,7 @@ private:
     void file_search_cursor();  //cursor find
     void file_search_right(); //right view
     void file_search_cursor_right();//right view
+    //void file_search_micro();
 
     int commonbody_r; //format
     int commonbody_s;
@@ -141,6 +142,7 @@ private:
     int blockheader_startingarr; // set to division.cpp
     int blockbody_startingarr;
 
+    int tab_index = 0;
 
     void excel_read(); // excel read and store excelformat!
 
